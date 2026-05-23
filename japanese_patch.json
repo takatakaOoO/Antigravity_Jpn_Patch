@@ -1,0 +1,611 @@
+{
+  "JA_TRANSLATIONS": {
+    "New chat": "新しいチャット",
+    "New Chat": "新しいチャット",
+    "History": "履歴",
+    "Settings": "設定",
+    "Sign in": "ログイン",
+    "Sign out": "ログアウト",
+    "Sign In": "ログイン",
+    "Sign Out": "ログアウト",
+    "Type a message": "メッセージを入力",
+    "Send": "送信",
+    "Stop": "停止",
+    "Copy": "コピー",
+    "Copied!": "コピーしました！",
+    "Retry": "リトライ",
+    "Cancel": "キャンセル",
+    "Close": "閉じる",
+    "Delete": "削除",
+    "Edit": "編集",
+    "Save": "保存",
+    "Discard": "破棄",
+    "Agent": "エージェント",
+    "Agents": "エージェント",
+    "Running": "実行中",
+    "Completed": "完了",
+    "Failed": "失敗",
+    "Pending": "待機中",
+    "Queued": "キュー待ち",
+    "Stopped": "停止済み",
+    "Start": "開始",
+    "Pause": "一時停止",
+    "Resume": "再開",
+    "Open workspace": "ワークスペースを開く",
+    "Open Workspace": "ワークスペースを開く",
+    "Open file": "ファイルを開く",
+    "Open File": "ファイルを開く",
+    "Open folder": "フォルダを開く",
+    "Open Folder": "フォルダを開く",
+    "No workspace open": "ワークスペースが開かれていません",
+    "General": "一般",
+    "Appearance": "外観",
+    "Theme": "テーマ",
+    "Dark": "ダーク",
+    "Light": "ライト",
+    "System": "システム",
+    "Language": "言語",
+    "About": "バージョン情報",
+    "Version": "バージョン",
+    "Check for updates": "アップデートを確認",
+    "Check for Updates": "アップデートを確認",
+    "Up to date": "最新です",
+    "Update available": "アップデートがあります",
+    "Download": "ダウンロード",
+    "Install": "インストール",
+    "Restart": "再起動",
+    "Loading": "読み込み中",
+    "Loading...": "読み込み中...",
+    "Connecting": "接続中",
+    "Connecting...": "接続中...",
+    "Connected": "接続済み",
+    "Disconnected": "切断",
+    "Error": "エラー",
+    "Warning": "警告",
+    "Info": "情報",
+    "Success": "成功",
+    "OK": "OK",
+    "Yes": "はい",
+    "No": "いいえ",
+    "Confirm": "確認",
+    "Are you sure?": "よろしいですか？",
+    "Run": "実行",
+    "Run code": "コードを実行",
+    "Apply": "適用",
+    "Apply changes": "変更を適用",
+    "Accept": "承認",
+    "Reject": "拒否",
+    "Approve": "承認",
+    "Deny": "拒否",
+    "Search": "検索",
+    "Search...": "検索...",
+    "Filter": "フィルター",
+    "Sort": "並べ替え",
+    "Refresh": "更新",
+    "More": "その他",
+    "Less": "折りたたむ",
+    "Show more": "もっと表示",
+    "Show less": "折りたたむ",
+    "Expand": "展開",
+    "Collapse": "折りたたむ",
+    "Back": "戻る",
+    "Next": "次へ",
+    "Previous": "前へ",
+    "Done": "完了",
+    "Finish": "終了",
+    "Help": "ヘルプ",
+    "Feedback": "フィードバック",
+    "Documentation": "ドキュメント",
+    "Keyboard shortcuts": "キーボードショートカット",
+    "Keyboard Shortcuts": "キーボードショートカット",
+    "What can I help you with?": "お手伝いできることはありますか？",
+    "Ask anything": "何でも聞いてください",
+    "No results found": "結果が見つかりませんでした",
+    "No results": "結果なし",
+    "Try again": "もう一度お試しください",
+    "Learn more": "詳細",
+    "Getting started": "はじめに",
+    "Welcome": "ようこそ",
+    "Explore": "探索",
+    "Manage your plan, credentials, and general preferences.": "プラン、認証情報、および一般的な設定を管理します。",
+    "Enable Telemetry": "テレメトリを有効にする",
+    "When toggled on, Antigravity collects usage data to help Google enhance performance and features.": "オンにすると、AntigravityはGoogleのパフォーマンスと機能向上に役立てるために使用状況データを収集します。",
+    "Marketing Emails": "マーケティングメール",
+    "Receive product updates, tips, and promotions from Google Antigravity via email.": "Google Antigravityからの製品アップデート、ヒント、プロモーションをメールで受け取ります。",
+    "Email": "メールアドレス",
+    "By using this app, you agree to its Terms of Service": "このアプリを使用することにより、利用規約に同意したことになります",
+    "Terms of Service": "利用規約",
+    "Configure global allowed and denied resource permissions.": "グローバルで許可および拒否されるリソース権限を設定します。",
+    "Project-Specific Settings": "プロジェクト固有の設定",
+    "Modify scoped permissions, folders, and agent settings like Sandbox and Terminal Command Execution.": "スコープされた権限、フォルダ、およびサンドボックスやターミナルコマンド実行などのエージェント設定を変更します。",
+    "Go To Projects": "プロジェクトへ移動",
+    "File Permissions": "ファイル権限",
+    "Network Permissions": "ネットワーク権限",
+    "Terminal & Tooling Permissions": "ターミナルおよびツール権限",
+    "File Reads": "ファイル読み取り",
+    "Allow/deny agent read access to specific files or directories.": "特定のファイルまたはディレクトリに対するエージェントの読み取りアクセスを許可/拒否します。",
+    "Add": "追加",
+    "File Writes": "ファイル書き込み",
+    "Allow/deny agent write access to specific files or directories.": "特定のファイルまたはディレクトリに対するエージェントの書き込みアクセスを許可/拒否します。",
+    "Default": "デフォルト",
+    "Requires manual review for all terminal commands and file accesses outside of the working folders.": "作業フォルダ外のすべてのターミナルコマンドおよびファイルアクセスに対して手動レビューが必要です。",
+    "Full Machine": "フルマシン",
+    "All terminal commands require review. The agent can read or write to any file in the machine.": "すべてのターミナルコマンドにレビューが必要です。エージェントはマシン内の任意のファイルの読み書きが可能です。",
+    "Unrestricted": "無制限",
+    "Disables all safety barriers for maximal iteration velocity.": "最大のイテレーション速度を得るために、すべての安全バリアを無効にします。",
+    "Custom": "カスタム",
+    "Manually customize individual settings.": "個別の設定を手動でカスタマイズします。",
+    "Always Proceed": "常に続行する",
+    "Allow/deny specific terminal commands.": "特定のターミナルコマンドを許可/拒否します。",
+    "Read URLs": "URL読み取り",
+    "Allow/deny agent read access to specific URLs or domains.": "特定のURLまたはドメインに対するエージェントの読み取りアクセスを許可/拒否します。",
+    "Allow/deny agent command execution outside the sandbox.": "サンドボックス外でのエージェントのコマンド実行を許可/拒否します。",
+    "External tools the agent can call via Model Context Protocol.": "エージェントがModel Context Protocol経由で呼び出せる外部ツール。",
+    "Configure the agent's visual theme and display preferences.": "エージェントのビジュアルテーマと表示設定を行います。",
+    "Chat Settings": "チャット設定",
+    "Verbose agent chat": "詳細なエージェントチャット",
+    "Display and preserve intermediate thinking steps": "中間思考ステップを表示・保存します",
+    "Select light, dark, or inherit system settings.": "ライト、ダーク、またはシステム設定を継承するかを選択します。",
+    "Light Theme": "ライトテーマ",
+    "Preset": "プリセット",
+    "Default Light": "デフォルト ライト",
+    "Background": "背景",
+    "Foreground": "前景",
+    "Accent": "アクセント",
+    "Dark Theme": "ダークテーマ",
+    "Default Dark": "デフォルト ダーク",
+    "Configure AI models and view your quota.": "AIモデルを設定し、クォータ（利用枠）を表示します。",
+    "Model Quota": "モデルの利用枠",
+    "View your available model quota. Quota refreshes periodically based on your plan.": "利用可能なモデルの利用枠を表示します。枠はプランに基づいて定期的に更新されます。",
+    "Configure default behaviors, skills, and MCP servers.": "デフォルトの動作、スキル、および MCP サーバーを設定します。",
+    "Token Usage": "トークン使用量",
+    "Installed MCP Servers": "インストール済み MCP サーバー",
+    "Add MCP +": "MCP を追加 +",
+    "Build With Google Plugins": "Google プラグインでビルド",
+    "Customize": "カスタマイズ",
+    "Add MCP Servers": "MCP サーバーを追加",
+    "Search MCP servers by name": "名前で MCP サーバーを検索",
+    "Installed": "インストール済み",
+    "Enable Antigravity to deploy apps to Google Cloud Run.": "AntigravityがGoogle Cloud Runにアプリをデプロイできるようにします。",
+    "Enable Antigravity to interact with Google Kubernetes Engine (GKE).": "AntigravityがGoogle Kubernetes Engine (GKE)と対話できるようにします。",
+    "The Dart and Flutter MCP server exposes Dart (and Flutter) development tool actions to compatible AI-assistant clients.": "DartおよびFlutter MCPサーバーは、互換性のあるAIクライアントにDart（およびFlutter）の開発ツールを提供します。",
+    "The Firebase Model Context Protocol (MCP) Server gives AI-powered development tools the ability to work with your Firebase projects and your app's codebase.": "Firebase MCPサーバーは、AI開発ツールにFirebaseプロジェクトやアプリのコードと連携する機能を提供します。",
+    "The Genkit Model Context Protocol (MCP) Server gives AI-powered development tools the ability to build, debug and inspect your Genkit app.": "Genkit MCPサーバーは、AI開発ツールにGenkitアプリのビルド、デバッグ、検査を行う機能を提供します。",
+    "Interact with your BigQuery data using natural language. This MCP server allows you to securely connect to your datasets to search the datasets, inspect table metadata, execute...": "自然言語でBigQueryデータと対話します。データセットに安全に接続し、検索やテーブルメタデータの検査、実行などを行えます...",
+    "Interact with your AlloyDB for PostgreSQL data using natural language. This MCP server allows you to securely connect to your database for executing SQL queries, inspecting tabl...": "自然言語でAlloyDB for PostgreSQLデータと対話します。データベースに安全に接続し、SQLクエリの実行やテーブルの検査を行えます...",
+    "The Bigtable Admin remote MCP server lets you manage Bigtable resources.": "Bigtable Admin リモートMCPサーバーを使用すると、Bigtableリソースを管理できます。",
+    "Interact with your Google Cloud Spanner data using natural language. This MCP server allows you to securely connect to your instances for executing SQL queries, inspecting...": "自然言語でGoogle Cloud Spannerデータと対話します。インスタンスに安全に接続し、SQLクエリの実行や検査を行えます...",
+    "Interact with your Cloud SQL for PostgreSQL data using natural language. This MCP server allows you to securely connect to your database for executing SQL queries, inspecting tabl...": "自然言語でCloud SQL for PostgreSQLデータと対話します。データベースに安全に接続し、SQLクエリの実行やテーブルの検査を行えます...",
+    "Interact with your Cloud SQL for MySQL data using natural language. This MCP server allows you to securely connect to your database for executing SQL queries, inspecting tabl...": "自然言語でCloud SQL for MySQLデータと対話します。データベースに安全に接続し、SQLクエリの実行やテーブルの検査を行えます...",
+    "Interact with your Cloud SQL for SQL Server data using natural language. This MCP server allows you to securely connect to your database for executing SQL queries, inspecting tabl...": "自然言語でCloud SQL for SQL Serverデータと対話します。データベースに安全に接続し、SQLクエリの実行やテーブルの検査を行えます...",
+    "Connect your AI assistants to Looker business intelligence. This MCP server enables data exploration and content management by allowing you to execute natural language querie...": "AIアシスタントをLooker BIに接続します。自然言語クエリの実行を可能にし、データの探索とコンテンツ管理を実現します...",
+    "Connect your AI assistants to the Knowledge Catalog (formerly known as Dataplex). This MCP server enables data discovery and governance by allowing you to search for data...": "AIアシスタントをKnowledge Catalog（旧Dataplex）に接続します。データの検索を可能にし、データの検出とガバナンスを実現します...",
+    "The MCP Toolbox for Databases is an open-source MCP server designed to simplify and secure the development of tools for interacting with databases.": "MCP Toolbox for Databasesは、データベースと対話するツールの開発を簡素化・安全化するために設計されたオープンソースのMCPサーバーです。",
+    "AlloyDB for PostgreSQL Admin MCP Server enables AI assistants to interact with AlloyDB for PostgreSQL resources, including creating clusters and administering users.": "AlloyDB for PostgreSQL Admin MCPサーバーは、クラスター作成やユーザー管理など、AIがAlloyDBリソースと対話できるようにします。",
+    "Cloud SQL for PostgreSQL Admin MCP Server enables AI assistants to interact with Cloud SQL for PostgreSQL resources, including creating instances, administering users, and...": "Cloud SQL for PostgreSQL Admin MCPサーバーは、インスタンス作成やユーザー管理など、AIがCloud SQLリソースと対話できるようにします...",
+    "Cloud SQL for MySQL Admin MCP Server enables AI assistants to interact with Cloud SQL for MySQL resources, including creating instances, administering users, and configuring...": "Cloud SQL for MySQL Admin MCPサーバーは、インスタンス作成やユーザー管理、設定など、AIがCloud SQLリソースと対話できるようにします...",
+    "Cloud SQL for SQL Server Admin MCP Server enables AI assistants to interact with Cloud SQL for SQL Server resources, including creating instances, administering users, and...": "Cloud SQL for SQL Server Admin MCPサーバーは、インスタンス作成やユーザー管理など、AIがCloud SQLリソースと対話できるようにします...",
+    "Interact with your Oracle Database data using natural language. This MCP server allows you to securely connect to your databases for executing SQL queries, inspecting table schemas...": "自然言語でOracle Databaseデータと対話します。データベースに安全に接続し、SQLクエリの実行やテーブルスキーマの検査を行えます...",
+    "The Dev Mode MCP Server brings Figma directly into your workflow by providing important design information and context to AI agents generating code from Figma design files.": "Dev Mode MCPサーバーは、Figmaデザインからコードを生成するAIエージェントに重要なデザイン情報とコンテキストを提供し、Figmaをワークフローに直接組み込みます。",
+    "The GitHub MCP Server is a Model Context Protocol (MCP) server that provides seamless integration with GitHub APIs, enabling advanced automation and interaction capabilities f...": "GitHub MCPサーバーは、GitHub APIとのシームレスな統合を提供するMCPサーバーであり、高度な自動化と対話機能を実現します...",
+    "Neon MCP Server is an open-source tool that lets you interact with your Neon Postgres databases in natural language.": "Neon MCPサーバーは、自然言語でNeon Postgresデータベースと対話できるオープンソースツールです。",
+    "The Stripe Model Context Protocol server allows you to integrate with Stripe APIs through function calling. This protocol supports various tools to interact with different Stripe...": "Stripe MCPサーバーは、関数呼び出しによるStripe APIとの統合を可能にします。さまざまなStripe機能と対話するためのツールをサポートしています...",
+    "Interact with Redis key-value stores": "Redisキーバリューストアと対話します",
+    "A Model Context Protocol server for interacting with MongoDB Atlas.": "MongoDB Atlasと対話するためのMCPサーバー。",
+    "Official Notion MCP Server that allows interaction with Notion workspaces, pages, databases, and comments via the Notion API.": "Notion API経由でNotionワークスペース、ページ、データベース、コメントとの対話を可能にする公式Notion MCPサーバー。",
+    "Official Linear.app MCP Server for interacting with Linear projects, issues, and workflows.": "Linearプロジェクト、課題、ワークフローと対話するための公式Linear.app MCPサーバー。",
+    "An MCP server implementation that integrates the Perplexity Sonar API to provide real-time, web-wide research capabilities.": "Perplexity Sonar APIを統合して、リアルタイムのウェブ全体検索機能を提供するMCPサーバー。",
+    "Official PayPal MCP Server that allows integration with PayPal APIs for payment processing, transaction management, and account operations.": "支払い処理、トランザクション管理、アカウント操作のためにPayPal APIとの統合を可能にする公式PayPal MCPサーバー。",
+    "The Heroku Platform MCP Server enables seamless interaction with Heroku Platform resources, allowing LLMs to read, manage, and operate applications, add-ons, databases,...": "Heroku Platform MCPサーバーは、LLMがアプリケーション、アドオン、データベースなどの読み取り、管理、操作を行えるようにします...",
+    "The Pinecone MCP Server enables AI tools to search Pinecone documentation, configure indexes, generate code informed by your index configuration, and upsert/search data in...": "Pinecone MCPサーバーは、AIツールがPineconeドキュメントの検索、インデックスの設定、設定に基づいたコード生成、データのアップサート/検索を行えるようにします...",
+    "Connect your Supabase projects to AI assistants. This MCP server allows managing tables, fetching config, executing SQL queries, managing edge functions, and working with...": "SupabaseプロジェクトをAIアシスタントに接続します。テーブルの管理、設定の取得、SQLクエリの実行、エッジ関数の管理などを行えます...",
+    "The Prisma MCP Server enables AI tools to interact with Prisma for creating and managing Postgres databases easily.": "Prisma MCPサーバーは、AIツールがPrismaと対話し、Postgresデータベースを簡単に作成・管理できるようにします。",
+    "The Locofy MCP Server enables Locofy.ai code to be integrated and extended with your IDE.": "Locofy MCPサーバーは、Locofy.aiコードをIDEと統合し、拡張できるようにします。",
+    "Airweave lets agents search any app.": "Airweaveを使用すると、エージェントは任意のアプリを検索できます。",
+    "Atlassian MCP Server for interacting with Atlassian products.": "Atlassian製品と対話するためのAtlassian MCPサーバー。",
+    "Harness MCP Server allows AI assistants to interact with the Harness platform APIs, enabling intelligent automation and assistance for software delivery and cloud operations.": "Harness MCPサーバーは、AIアシスタントがHarnessプラットフォームAPIと対話できるようにし、インテリジェントな自動化と支援を可能にします。",
+    "SonarQube MCP Server enables AI assistants to interact with SonarQube instances for code quality analysis, project management, and quality gate operations.": "SonarQube MCPサーバーは、コード品質分析、プロジェクト管理、品質ゲート操作のためにAIアシスタントがSonarQubeと対話できるようにします。",
+    "Netlify MCP Server enables AI assistants to interact with Netlify's platform for managing sites, deployments, domains, and other web development workflows.": "Netlify MCPサーバーは、サイト、デプロイ、ドメインなどのWeb開発ワークフローを管理するために、AIがNetlifyと対話できるようにします。",
+    "A Model Context Protocol server that provides structured thinking and reasoning capabilities for LLM conversations.": "LLMの会話に構造化された思考と推論機能を提供するMCPサーバー。",
+    "Sonatype MCP server for interacting with our dependency management and security intelligence platform.": "依存関係管理およびセキュリティインテリジェンスプラットフォームと対話するためのSonatype MCPサーバー。",
+    "The Google Maps Platform Code Assist MCP server provides your favorite AI coding assistant with up-to-date, official Google Maps Platform documentation, code samples,...": "Google Maps Platform Code Assist MCPサーバーは、最新の公式ドキュメントやコードサンプルをAIコーディングアシスタントに提供します...",
+    "This MCP server provides your LLM with docs and examples to instrument your AI apps with Arize AX. It also provides access to Arize support. Connect it to your IDE or LLM and get...": "このMCPサーバーは、AIアプリにArize AXを組み込むためのドキュメントと例を提供し、サポートへのアクセスも提供します。IDEまたはLLMに接続して...",
+    "The Postman MCP Server connects Postman to AI tools, giving AI agents and assistants the ability to access workspaces, manage collections and environments, evaluate APIs, and...": "Postman MCPサーバーは、AIエージェントがワークスペースへのアクセス、コレクションや環境の管理、APIの評価などを行えるようにします...",
+    "The Stitch MCP server enables AI assistants to interact with Stitch for vibe design: generating UI designs from text and images, and accessing project and screen details. See...": "Stitch MCPサーバーは、テキストや画像からのUIデザインの生成、プロジェクトや画面の詳細へのアクセスなど、Stitchとの対話を可能にします。詳細を見る...",
+    "Enable Antigravity to control and inspect a live Chrome browser, with access to the full power of Chrome DevTools for reliable automation, in-depth debugging, and performance...": "AntigravityがライブChromeブラウザを制御・検査できるようにし、信頼性の高い自動化やデバッグのためにChrome DevToolsの全機能へアクセスできるようにします...",
+    "The Google Developer Knowledge MCP server gives AI-powered development tools the ability to search Google's official developer documentation and retrieve information for...": "Google Developer Knowledge MCPサーバーは、AI開発ツールにGoogleの公式開発者向けドキュメントを検索し、情報を取得する機能を提供します...",
+    "The ClickHouse MCP server enables agents to securely interact with ClickHouse databases. It provides a universal interface to execute SQL, explore data, and view backup & billing...": "ClickHouse MCPサーバーは、エージェントがClickHouseデータベースと安全に対話できるようにします。SQLの実行、データの探索、バックアップと請求の表示を行えます...",
+    "Perform a range of infrastructure management tasks, including: manage virtual machine (VM) instances, manage instance group managers and instance templates, manage disks...": "仮想マシン (VM) インスタンス、インスタンスグループマネージャー、ディスクの管理など、さまざまなインフラ管理タスクを実行します...",
+    "Access enterprise mobility data using natural language queries about device fleets, automated auditing of policy compliance, and the integration of device management data...": "デバイスフリートに関する自然言語クエリ、ポリシーコンプライアンスの自動監査、およびデバイス管理データの統合を使用して、エンタープライズモビリティデータにアクセスします...",
+    "Search your Google Cloud projects using natural language.": "自然言語を使用してGoogle Cloudプロジェクトを検索します。",
+    "Perform searches on ingested data in Google-owned data stores.": "Googleが所有するデータストアに取り込まれたデータを検索します。",
+    "Interact with documents stored in a Firestore database using natural language.": "自然言語を使用して、Firestoreデータベースに保存されているドキュメントと対話します。",
+    "Access resources in the Cloud Logging platform using natural language.": "自然言語を使用して、Cloud Loggingプラットフォーム内のリソースにアクセスします。",
+    "Manage clusters for Managed Service for Apache Kafka and Kafka Connect using natural language.": "自然言語を使用して、Managed Service for Apache KafkaおよびKafka Connectのクラスターを管理します。",
+    "Access resources in the Cloud Monitoring platform using natural language.": "自然言語を使用して、Cloud Monitoringプラットフォーム内のリソースにアクセスします。",
+    "Manage Pub/Sub resources and publish messages. Create, list, get, update, and delete Pub/Sub topics, subscriptions, and snapshots, as well as publish messages to topics.": "Pub/Subリソースを管理し、メッセージをパブリッシュします。トピック、サブスクリプション、スナップショットの作成、一覧表示、取得、更新、削除などを行えます。",
+    "The Cloud SQL remote MCP server lets you access and run Cloud SQL tools to create, manage, and query Cloud SQL resources from your AI-enabled development environment...": "Cloud SQLリモートMCPサーバーを使用すると、AI対応の開発環境からCloud SQLツールにアクセスして、Cloud SQLリソースを作成、管理、クエリできます...",
+    "Build with Antigravity Plugins": "Antigravity プラグインでビルド",
+    "Plugins are packaged collections of skills and MCPs to help the Agent in Antigravity work with Google developer products. You can always change your choices in Settings.": "プラグインは、AntigravityのエージェントがGoogle開発者製品と連携するのを支援する、スキルとMCPのパッケージコレクションです。これらの選択は設定からいつでも変更できます。",
+    "Core tools and knowledge required to develop for Android": "Android開発に必要なコアツールと知識",
+    "Keep your coding agent up to date with the latest web best practices.": "コーディングエージェントを最新のWebベストプラクティスで最新の状態に保ちます。",
+    "Using the Antigravity Python SDK to build AI agents": "Antigravity Python SDKを使用してAIエージェントを構築する",
+    "Curated collection of agent skills for science.": "科学向けに厳選されたエージェントスキルのコレクション。",
+    "Prototype, build & run modern apps users love with Firebase's backend, AI, and operational infrastructure.": "Firebaseのバックエンド、AI、運用インフラストラクチャを使用して、ユーザーに愛されるモダンなアプリのプロトタイプ作成、構築、実行を行います。",
+    "Reliable automation, in-depth debugging, and performance analysis in Chrome using Chrome DevTools and Puppeteer": "Chrome DevToolsとPuppeteerを使用した、Chromeでの信頼性の高い自動化、詳細なデバッグ、パフォーマンス分析",
+    "Browser Settings": "ブラウザ設定",
+    "Configure the browser subagent. It requires Google Chrome to be installed. The browser subagent can be invoked by typing /browser in the conversation input box.": "ブラウザサブエージェントを設定します。Google Chromeのインストールが必要です。入力ボックスに /browser と入力することで呼び出せます。",
+    "Browser Javascript Execution Policy": "ブラウザJavaScript実行ポリシー",
+    "Controls whether the agent can run custom JavaScript to automate complex browser actions.": "エージェントがカスタムJavaScriptを実行して複雑なブラウザアクションを自動化できるかどうかを制御します。",
+    "Request Review": "レビューをリクエスト",
+    "Actuation Permissions": "操作権限",
+    "Browser Actuation Rules": "ブラウザ操作ルール",
+    "Configure allowed and denied URLs for browser actuation.": "ブラウザ操作に対して許可および拒否するURLを設定します。",
+    "Disabled": "無効",
+    "Block all browser JavaScript execution.": "ブラウザでのすべてのJavaScript実行をブロックします。",
+    "Prompt for approval before running browser scripts.": "ブラウザスクリプトを実行する前に承認を求めます。",
+    "Allow full browser script execution without prompting.": "確認なしでブラウザスクリプトの完全な実行を許可します。",
+    "Browser Actuation Permissions": "ブラウザ操作権限",
+    "Execute URLs": "URLの実行",
+    "Allow/deny agent browser actuation access to specific URLs.": "特定のURLに対するエージェントのブラウザ操作アクセスを許可/拒否します。",
+    "App Settings": "アプリ設定",
+    "Manage application settings.": "アプリケーションの設定を管理します。",
+    "Prevent Sleep": "スリープを防止",
+    "Prevent the computer from sleeping while the app is running.": "アプリ実行中はコンピュータがスリープ状態にならないようにします。",
+    "Keep In Menu Bar": "メニューバーに保持",
+    "The app will be accessible from the menu bar and will keep running in the background when all windows are closed.": "すべてのウィンドウを閉じても、アプリはメニューバーからアクセス可能でバックグラウンドで実行され続けます。",
+    "Notifications": "通知",
+    "Notification Settings": "通知設定",
+    "To modify notification settings, open your operating system's system preferences.": "通知設定を変更するには、オペレーティングシステムのシステム環境設定を開いてください。",
+    "Open System Preferences": "システム環境設定を開く",
+    "Conversations": "会話",
+    "Agent settings and permissions for conversations outside of projects.": "プロジェクト外の会話に対するエージェント設定と権限。",
+    "Agent Settings": "エージェント設定",
+    "Security Preset": "セキュリティプリセット",
+    "Choose a predefined security preset for the agent. This controls terminal auto-execution policy, and file access policy.": "エージェントの定義済みセキュリティプリセットを選択します。これにより、ターミナルの自動実行ポリシーとファイルアクセスポリシーが制御されます。",
+    "Outside of folders file access policy": "フォルダ外ファイルアクセスポリシー",
+    "Configures how the agent tries to access files outside of its working folders.": "エージェントが作業フォルダ外のファイルにアクセスしようとする方法を設定します。",
+    "Terminal Command Auto Execution": "ターミナルコマンド自動実行",
+    "Controls whether terminal commands require your approval before running.": "実行前にターミナルコマンドの承認が必要かどうかを制御します。",
+    "Require Review": "レビューが必要",
+    "Agent Behavior": "エージェントの動作",
+    "Artifact Review Policy": "アーティファクトレビューポリシー",
+    "Specifies Agent's behavior when asking for review on artifacts, which are documents it creates to enable a richer conversation experience.": "より豊かな会話体験を実現するために作成するドキュメントであるアーティファクトのレビューを求める際のエージェントの動作を指定します。",
+    "Local Permissions": "ローカル権限",
+    "Inherits from global settings. Local permissions have higher priority.": "グローバル設定から継承します。ローカル権限の方が優先順位が高くなります。",
+    "File Access Rules": "ファイルアクセスルール",
+    "Configure allowed and denied paths for file reads and writes.": "ファイルの読み書きに対して許可および拒否するパスを設定します。",
+    "Network Access Rules": "ネットワークアクセスルール",
+    "Configure allowed and denied URLs for reading.": "読み取りに対して許可および拒否するURLを設定します。",
+    "Configure allowed terminal commands.": "許可されるターミナルコマンドを設定します。",
+    "Configure allowed commands outside the sandbox.": "サンドボックス外で許可されるコマンドを設定します。",
+    "Configure external tools via Model Context Protocol.": "Model Context Protocol経由で外部ツールを設定します。",
+    "The breakdown below shows token usage from customizations like skills, rules, and MCP. If the budget is exceeded, large customizations will be truncated automatically.": "以下の内訳は、スキル、ルール、MCPなどのカスタマイズによるトークン使用量を示しています。予算を超えた場合、大きなカスタマイズは自動的に切り捨てられます。",
+    "Rules": "ルール",
+    "Open": "開く",
+    "Allow": "許可",
+    "Ask": "確認",
+    "e.g., npm test": "例: npm test",
+    "Build with Google": "Google プラグインでビルド",
+    "Modern Web Guidance": "モダンWebガイダンス",
+    "Google Antigravity SDK": "Google Antigravity SDK",
+    "Science": "サイエンス",
+    "Firebase": "Firebase",
+    "Chrome DevTools": "Chrome DevTools",
+    "Baseline model quota reached": "ベースラインモデルの利用枠に達しました",
+    "See plans.": "プランを見る。",
+    "Provide Feedback": "フィードバックを送信",
+    "Feedback Type": "フィードバックの種類",
+    "Bug Report": "バグ報告",
+    "Feature Request": "機能リクエスト",
+    "Auth and Billing": "認証と請求",
+    "General Feedback": "一般的なフィードバック",
+    "Description": "説明",
+    "Please describe the issue in detail. The more actionable your feedback, the quicker our team can address your request. Some helpful information includes:": "問題の詳細を説明してください。フィードバックが具体的であるほど、チームは迅速に対応できます。役立つ情報の例:",
+    "Steps to reproduce the issue": "問題を再現する手順",
+    "Expected behavior": "期待される動作",
+    "Actual behavior": "実際の動作",
+    "Any error messages": "エラーメッセージ（ある場合）",
+    "Any relevant information": "その他の関連情報",
+    "Describe the bug you encountered...": "遭遇したバグを記述してください...",
+    "Always Ask": "常に確認",
+    "+ New Conversation": "+ 新しい会話",
+    "Conversation History": "会話履歴",
+    "Scheduled Tasks": "スケジュールされたタスク",
+    "Enable AI Credit Overages": "AIクレジットの超過使用を有効にする",
+    "When toggled on, Antigravity will use your AI credits to fulfill model requests once you're out of model quota. Antigravity will always use your model quota first before using AI credits.": "オンにすると、Antigravityはモデルの利用枠を使い切った後、AIクレジットを使用してリクエストを実行します。常にAIクレジットの前にモデルの利用枠を優先して使用します。",
+    "See Activity": "アクティビティを見る",
+    "Get More AI Credits": "さらにAIクレジットを取得",
+    "View your available model quota and AI credits. Model quota refreshes periodically based on your plan. Enable AI Credit Overages to continue using models when your quota is exhausted.": "利用可能なモデルの利用枠とAIクレジットを表示します。利用枠はプランに基づき定期的に更新されます。超過使用を有効にすると、利用枠を使い切った後もモデルを使用できます。",
+    "Configure the browser subagent. It requires": "ブラウザサブエージェントを設定します。",
+    "to be installed. The browser subagent can be invoked by typing": "のインストールが必要です。",
+    "in the conversation input box.": "を会話入力ボックスに入力することで呼び出せます。",
+    "Inherits from ": "継承元: ",
+    "global settings": "グローバル設定",
+    ". Local permissions have higher priority.": "。ローカル権限の方が優先順位が高くなります。",
+    "Manage project folders, agent settings, and permissions.": "プロジェクトフォルダ、エージェント設定、権限を管理します。",
+    "Useful for typical development with an emphasis on security. It prioritizes safety over speed by requiring manual approval for all terminal commands and files outside the project directory.": "セキュリティを重視した一般的な開発に便利です。プロジェクトディレクトリ外のすべてのターミナルコマンドやファイルに手動承認を求めることで、速度よりも安全性を優先します。",
+    "Plugin Operation Error:": "プラグイン操作エラー:",
+    "Archive Conversation": "会話をアーカイブ",
+    "Pin Conversation": "会話をピン留め",
+    "New Conversation in Project": "プロジェクト内で新しい会話",
+    "Project Settings": "プロジェクト設定",
+    "Security Notice & Data Use": "セキュリティに関するお知らせとデータの利用について",
+    "AI coding agents are known to have certain security limitations. Users should be aware of potential risks, including data exfiltration and possible code execution. Avoid processing highly sensitive data and verify all the actions taken by the agent.": "AIコーディングエージェントには一定のセキュリティ上の制限があることが知られています。ユーザーは、データの流出やコード実行の可能性などの潜在的なリスクを認識しておく必要があります。機密性の高いデータの処理は避け、エージェントが実行したすべてのアクションを確認してください。",
+    "Yes, I agree to help improve Antigravity by allowing Google to collect and use my": "はい、Antigravityの改善のためにGoogleが私の",
+    "Interactions data, subject to the": "対話データを収集・使用することに同意します。これには",
+    "and": "および",
+    ". I understand I can choose to opt out later whenever I want via my settings.": "が適用されます。設定からいつでもオプトアウトできることを理解しています。",
+    "Allow running this command?": "このコマンドの実行を許可しますか？",
+    "Yes, allow this time": "はい、今回だけ許可する",
+    "(tell the agent what to do instead)": "(代わりにエージェントに指示する)",
+    "Skip": "スキップ",
+    "Submit": "送信"
+  },
+  "MCP_DESCRIPTIONS": [
+    {
+      "prefix": "Interact with your BigQuery data using natural language.",
+      "translation": "自然言語を使用してBigQueryデータと対話します。このMCPサーバーを使用すると、データセットに安全に接続して検索、テーブルメタデータの検査、SQLクエリの実行などが可能になります。"
+    },
+    {
+      "prefix": "Interact with your AlloyDB for PostgreSQL data using natural language.",
+      "translation": "自然言語を使用してAlloyDB for PostgreSQLデータと対話します。このMCPサーバーを使用すると、データベースに安全に接続してSQLクエリの実行、テーブル情報の検査などが可能になります。"
+    },
+    {
+      "prefix": "Interact with your Google Cloud Spanner data using natural language.",
+      "translation": "自然言語を使用してGoogle Cloud Spannerデータと対話します。このMCPサーバーを使用すると、インスタンスに安全に接続してSQLクエリの実行、テーブル情報の検査などが可能になります。"
+    },
+    {
+      "prefix": "Interact with your Cloud SQL for PostgreSQL data using natural language.",
+      "translation": "自然言語を使用してCloud SQL for PostgreSQLデータと対話します。このMCPサーバーを使用すると、データベースに安全に接続してSQLクエリの実行、テーブル情報の検査などが可能になります。"
+    },
+    {
+      "prefix": "Interact with your Cloud SQL for MySQL data using natural language.",
+      "translation": "自然言語を使用してCloud SQL for MySQLデータと対話します。このMCPサーバーを使用すると、データベースに安全に接続してSQLクエリの実行、テーブル情報の検査などが可能になります。"
+    },
+    {
+      "prefix": "Interact with your Cloud SQL for SQL Server data using natural language.",
+      "translation": "自然言語を使用してCloud SQL for SQL Serverデータと対話します。このMCPサーバーを使用すると、データベースに安全に接続してSQLクエリの実行、テーブル情報の検査などが可能になります。"
+    },
+    {
+      "prefix": "Interact with your Oracle Database data using natural language.",
+      "translation": "自然言語を使用してOracle Databaseデータと対話します。このMCPサーバーを使用すると、データベースに安全に接続してSQLクエリの実行やテーブルスキーマの検査などが可能になります。"
+    },
+    {
+      "prefix": "Cloud SQL for PostgreSQL Admin MCP Server enables AI assistants to interact with Cloud SQL for PostgreSQL resources",
+      "translation": "Cloud SQL for PostgreSQL Admin MCPサーバーは、AIが各種リソース（インスタンス作成、ユーザー管理など）と対話できるようにします。"
+    },
+    {
+      "prefix": "Cloud SQL for MySQL Admin MCP Server enables AI assistants to interact with Cloud SQL for MySQL resources",
+      "translation": "Cloud SQL for MySQL Admin MCPサーバーは、AIが各種リソース（インスタンス作成、ユーザー管理など）と対話できるようにします。"
+    },
+    {
+      "prefix": "Cloud SQL for SQL Server Admin MCP Server enables AI assistants to interact with Cloud SQL for SQL Server resources",
+      "translation": "Cloud SQL for SQL Server Admin MCPサーバーは、AIが各種リソース（インスタンス作成、ユーザー管理など）と対話できるようにします。"
+    },
+    {
+      "prefix": "The Cloud SQL remote MCP server lets you access and run Cloud SQL tools",
+      "translation": "Cloud SQL リモート MCP サーバーを使用すると、AI対応の開発環境からCloud SQLツールにアクセスし、リソースの作成、管理、クエリ実行を行えます。"
+    },
+    {
+      "prefix": "Connect your AI assistants to Looker business intelligence.",
+      "translation": "AIアシスタントをLookerビジネスインテリジェンスに接続します。このMCPサーバーは、自然言語クエリを実行してデータの探索やコンテンツ管理を可能にします。"
+    },
+    {
+      "prefix": "Connect your AI assistants to the Knowledge Catalog",
+      "translation": "AIアシスタントをKnowledge Catalog（旧Dataplex）に接続します。このMCPサーバーは、データの検索を可能にし、データの発見とガバナンスを実現します。"
+    },
+    {
+      "prefix": "The GitHub MCP Server is a Model Context Protocol (MCP) server that provides seamless integration with GitHub APIs",
+      "translation": "GitHub MCPサーバーは、GitHub APIとのシームレスな統合を提供するMCPサーバーであり、高度な自動化と対話機能を実現します。"
+    },
+    {
+      "prefix": "The Stripe Model Context Protocol server allows you to integrate with Stripe APIs through function calling.",
+      "translation": "Stripe MCPサーバーを使用すると、関数呼び出しを通じてStripe APIと統合できます。さまざまなStripe機能と対話するためのツールをサポートします。"
+    },
+    {
+      "prefix": "The Heroku Platform MCP Server enables seamless interaction with Heroku Platform resources",
+      "translation": "Heroku Platform MCPサーバーは、Herokuプラットフォームリソースとのシームレスな対話を可能にし、LLMによるアプリやアドオン、データベースの読み取り・管理・操作を実現します。"
+    },
+    {
+      "prefix": "The Pinecone MCP Server enables AI tools to search Pinecone documentation, configure indexes",
+      "translation": "Pinecone MCPサーバーは、AIツールによるPineconeドキュメントの検索、インデックス設定、構成に基づいたコード生成、データのアップサートや検索を可能にします。"
+    },
+    {
+      "prefix": "Connect your Supabase projects to AI assistants.",
+      "translation": "SupabaseプロジェクトをAIアシスタントに接続します。テーブルの管理、設定の取得、SQLクエリの実行、エッジ関数の管理などが可能になります。"
+    },
+    {
+      "prefix": "The Google Maps Platform Code Assist MCP server provides your favorite AI coding assistant with up-to-date",
+      "translation": "Google Maps Platform Code Assist MCPサーバーは、最新の公式Google Maps PlatformドキュメントやコードをAIコーディングアシスタントに提供します。"
+    },
+    {
+      "prefix": "This MCP server provides your LLM with docs and examples to instrument your AI apps with Arize AX.",
+      "translation": "このMCPサーバーは、AIアプリにArize AXを組み込むためのドキュメントや例をLLMに提供します。また、Arizeサポートへのアクセスも提供します。"
+    },
+    {
+      "prefix": "The Postman MCP Server connects Postman to AI tools, giving AI agents and assistants the ability to access workspaces",
+      "translation": "Postman MCPサーバーはPostmanをAIツールに接続し、AIエージェントにワークスペースへのアクセス、コレクションや環境の管理、APIの評価などの機能を提供します。"
+    },
+    {
+      "prefix": "The Stitch MCP server enables AI assistants to interact with Stitch for vibe design",
+      "translation": "Stitch MCPサーバーは、AIによるStitchでのUIデザイン生成（テキストや画像から）、プロジェクトや画面の詳細へのアクセスなどを可能にします。"
+    },
+    {
+      "prefix": "Enable Antigravity to control and inspect a live Chrome browser, with access to the full power of Chrome DevTools",
+      "translation": "Antigravityがライブ状態のChromeブラウザを制御および検査できるようにします。自動化や詳細なデバッグのためのChrome DevToolsの全機能にアクセスできます。"
+    },
+    {
+      "prefix": "The Google Developer Knowledge MCP server gives AI-powered development tools the ability to search Google's official developer documentation",
+      "translation": "Google Developer Knowledge MCPサーバーは、AI開発ツールにGoogle公式の開発者向けドキュメントを検索し、情報を取得する機能を提供します。"
+    },
+    {
+      "prefix": "The ClickHouse MCP server enables agents to securely interact with ClickHouse databases.",
+      "translation": "ClickHouse MCPサーバーは、エージェントがClickHouseデータベースと安全に対話できるようにします。SQL実行、データ探索、バックアップ等の確認インターフェースを提供します。"
+    },
+    {
+      "prefix": "Perform a range of infrastructure management tasks, including: manage virtual machine",
+      "translation": "VMインスタンス、インスタンスグループマネージャー、インスタンステンプレート、ディスクの管理など、さまざまなインフラストラクチャ管理タスクを実行します。"
+    },
+    {
+      "prefix": "Access enterprise mobility data using natural language queries about device fleets",
+      "translation": "自然言語クエリを使用して、デバイスフリートに関するエンタープライズモビリティデータにアクセスし、ポリシー遵守の自動監査やデバイス管理データの統合を行います。"
+    },
+    {
+      "prefix": "Retrieve and analyze AlphaFold predicted",
+      "translation": "AlphaFoldによるタンパク質の予測構造を取得・解析します。ユーザーがUniProtアクセッションIDを提供した場合に使用します。"
+    },
+    {
+      "prefix": "Analyzes genetic variant effects on",
+      "translation": "AlphaGenome APIを使用して、遺伝的変異が遺伝子発現やクロマチンアクセシビリティ等に与える影響を分析します。"
+    },
+    {
+      "prefix": "Orchestrates Android development tasks",
+      "translation": "androidコマンドラインツールを使用して、プロジェクト作成、デプロイ、SDK管理などのAndroid開発タスクを調整します。"
+    },
+    {
+      "prefix": "Query the ChEMBL database for bioactive",
+      "translation": "ChEMBLデータベースにクエリを送信し、生理活性分子、創薬ターゲット、生物活性データなどを検索します。"
+    },
+    {
+      "prefix": "Query ClinicalTrials.gov via APIv2.",
+      "translation": "APIv2経由でClinicalTrials.govにクエリを送信します。条件、薬剤、場所などで試験を検索したい場合に使用します。"
+    },
+    {
+      "prefix": "Use when needing clinical significance,",
+      "translation": "臨床的意義、病原性分類、またはヒトゲノム変異のベンチマークコントロールを見つける必要がある場合に使用します。"
+    },
+    {
+      "prefix": "Use when you want to look up, map, and",
+      "translation": "NCBIのdbSNPデータベースで短い遺伝的変異(SNPなど)を検索・マッピングしたい場合に使用します。"
+    },
+    {
+      "prefix": "Query and search the EMBL-EBI Ontology",
+      "translation": "250以上のオントロジーにわたる生物医学オントロジー用語等について、EMBL-EBI OLSを検索します。"
+    },
+    {
+      "prefix": "Query the ENCODE Registry of cis-Regulatory",
+      "translation": "SCREEN GraphQL API経由でENCODEのシス調節配列(cCREs)レジストリを検索するか、REST APIにクエリします。"
+    },
+    {
+      "prefix": "Query the Ensembl database to resolve",
+      "translation": "Ensemblデータベースを検索してIDを解決し、ゲノムやタンパク質の配列を取得、遺伝子構造を検索します。"
+    },
+    {
+      "prefix": "Performs 3D structural searches of",
+      "translation": "Foldseek APIを使用して、様々なデータベースに対してタンパク質の3D構造検索を実行します。"
+    },
+    {
+      "prefix": "Query the Genome Aggregation Database",
+      "translation": "gnomADデータベースにクエリを送信します。特定の遺伝的変異の希少性やアレル頻度を決定する際に使用します。"
+    },
+    {
+      "prefix": "Use when you want to retrieve quantitative",
+      "translation": "GTExプロジェクトから定量的なRNA発現データと変異eQTL情報を取得します。"
+    },
+    {
+      "prefix": "Use when you want to retrieve semi-quantitative",
+      "translation": "Human Protein Atlas (HPA) から半定量的なタンパク質発現および空間局在データを取得します。"
+    },
+    {
+      "prefix": "Identify domains, families, and sites",
+      "translation": "タンパク質のドメインやファミリーを特定します。ファミリー内の全タンパク質を見つける場合などに使用します。"
+    },
+    {
+      "prefix": "Query the JASPAR database for Transcription",
+      "translation": "JASPARデータベースで転写因子(TF)結合プロファイルを検索します。"
+    },
+    {
+      "prefix": "Search for scientific papers, preprints,",
+      "translation": "arXivで科学論文、プレプリント、出版物を検索し、メタデータや要約を抽出、PDFをダウンロードします。"
+    },
+    {
+      "prefix": "Browse, filter, and download life sciences,",
+      "translation": "bioRxivおよびmedRxivからライフサイエンス、生物学、医学のプレプリントを閲覧、フィルタリング、ダウンロードします。"
+    },
+    {
+      "prefix": "Search Europe PMC for scientific literature",
+      "translation": "Europe PMCで科学文献を検索し、オープンアクセスのフルテキストやPDFをダウンロードします。"
+    },
+    {
+      "prefix": "Query the OpenAlex scholarly database",
+      "translation": "OpenAlex学術データベースで、研究論文、著者、機関、トピックなどを検索します。"
+    },
+    {
+      "prefix": "Retrieve protein and nucleotide sequences",
+      "translation": "E-utilitiesを使用してNCBIデータベースからタンパク質およびヌクレオチド配列を取得します。"
+    },
+    {
+      "prefix": "Query, search, and download data from",
+      "translation": "医薬品、デバイス、食品などのFDAデータ(openFDA API)を照会、検索、ダウンロードします。"
+    },
+    {
+      "prefix": "Query Open Targets Platform for target-disease",
+      "translation": "Open Targets Platformを検索し、ターゲットと疾患の関連性、創薬ターゲットの発見、遺伝学エビデンス等を取得します。"
+    },
+    {
+      "prefix": "Use when you want to search for or download",
+      "translation": "生体分子の実験的に決定された3D構造を検索またはダウンロードしたい場合に使用します。"
+    },
+    {
+      "prefix": "Performs multiple sequence alignment of",
+      "translation": "EBI Clustal Omegaを使用してタンパク質のマルチプルアライメントを実行します。"
+    },
+    {
+      "prefix": "Searches for homologous protein sequences",
+      "translation": "MMseqs2またはBLASTを使用して相同なタンパク質配列を検索します。"
+    },
+    {
+      "prefix": "Query PubChem, search by name/CID/SMILES,",
+      "translation": "PubChemにクエリを送信し、名前/CID/SMILESで検索し、ケモインフォマティクスのためにプロパティ等を取得します。"
+    },
+    {
+      "prefix": "Search PubMed for scientific literature,",
+      "translation": "PubMedで科学文献(公開されている臨床試験を含む)を検索し、要約とフルテキストを取得します。"
+    },
+    {
+      "prefix": "Visualize, analyze, and render protein",
+      "translation": "PyMOLを使用してタンパク質および分子構造を可視化、分析、レンダリングします。"
+    },
+    {
+      "prefix": "Query the QuickGO and Evidence & Conclusion",
+      "translation": "QuickGOおよびECO REST APIにクエリを送信します。遺伝子を生物学的プロセス等にマッピングする際に使用します。"
+    },
+    {
+      "prefix": "Query the Reactome database (Analysis",
+      "translation": "Reactomeデータベースにクエリを送信します。ユーザーがパスウェイ分析などについて尋ねた場合に使用します。"
+    },
+    {
+      "prefix": "Shared Python package for Science Skills,",
+      "translation": "Science Skills用の共有Pythonパッケージ。現在、レート制限と再試行を備えた統一HTTPクライアントが含まれています。"
+    },
+    {
+      "prefix": "Query the STRING database for protein-protein",
+      "translation": "STRINGデータベースでタンパク質間相互作用(PPI)、機能的濃縮、ホモロジーを検索します。"
+    },
+    {
+      "prefix": "Fetch Evolutionary Conservation scores",
+      "translation": "UCSCゲノムブラウザから進化保存スコアと転写因子結合部位(TFBS)を取得します。"
+    },
+    {
+      "prefix": "Queries the UniBind database for experimentally",
+      "translation": "実験的に検証された転写因子(TF)結合部位についてUniBindデータベースを検索します。"
+    },
+    {
+      "prefix": "Access protein metadata, function, taxonomy,",
+      "translation": "UniProtKBなどにわたるタンパク質のメタデータ、機能、分類、配列にアクセスします。"
+    },
+    {
+      "prefix": "Checks whether the uv Python package",
+      "translation": "uv Pythonパッケージマネージャーがインストールされているか確認し、ない場合はインストールします。"
+    },
+    {
+      "prefix": "Distills a completed user workflow or",
+      "translation": "完了したユーザーワークフローまたは対話を、再利用可能なエージェントスキルに抽出します。"
+    },
+    {
+      "prefix": "Plugins are packaged collections of skills and MCPs",
+      "translation": "プラグインは、AntigravityのエージェントがGoogle開発者製品と連携するのを支援する、スキルとMCPのパッケージコレクションです。これらの選択は設定からいつでも変更できます。"
+    }
+  ]
+}

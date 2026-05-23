@@ -1,0 +1,11 @@
+# Ignore application binaries and extracted source code
+app.asar
+app_extracted/
+
+# Ignore script files for internal patching process
+extract.js
+update_preload.js
+
+# OS generated files
+.DS_Store
+Thumbs.db
