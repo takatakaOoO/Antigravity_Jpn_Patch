@@ -31,7 +31,20 @@ if (-not (Test-Path $BackupFile)) {
     Copy-Item $AsarFile $BackupFile -Force
     Write-Host "  バックアップ完了: app.asar.bak" -ForegroundColor Green
 } else {
-    Write-Host "  バックアップは既に存在します" -ForegroundColor DarkYellow
+    Write-Host "`n  [警告] バックアップファイル (app.asar.bak) が既に存在します！" -ForegroundColor DarkYellow
+    Write-Host "  ------------------------------------------------------------------"
+    Write-Host "  ・直前にAntigravity本体をアップデートした場合のみ [y] で上書きを推奨します。"
+    Write-Host "  ・翻訳データの更新（2回目以降のパッチ適用）の場合は [n] で上書きしないことを推奨します。"
+    Write-Host "  ※誤って上書きした場合、元の英語版（純正版）に復元できなくなります。"
+    Write-Host "  ------------------------------------------------------------------"
+    
+    $overwrite = Read-Host "  バックアップを現在の app.asar で上書き作成しますか？ (y/N)"
+    if ($overwrite -match "^y$|^yes$") {
+        Copy-Item $AsarFile $BackupFile -Force
+        Write-Host "  バックアップを上書きしました: app.asar.bak" -ForegroundColor Green
+    } else {
+        Write-Host "  既存のバックアップを保持しました（スキップ）" -ForegroundColor Green
+    }
 }
 
 # 2. asar展開
