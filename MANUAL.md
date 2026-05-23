@@ -2,16 +2,14 @@
 
 ## 1. 翻訳データの仕組み
 このパッチは、AntigravityのUIやツールの説明文を日本語化します。
-翻訳データはすべて `japanese_patch.json` というファイルで管理されています。
-アプリ本体にこのファイルを読み込ませることで、UIを動的に日本語に置き換えます。
+翻訳データはすべてこのリポジトリの `japanese_patch.json` というファイルで管理されています。
+インストールスクリプト（`install.ps1`）を実行することで、このJSONの翻訳データが自動的にAntigravityアプリ本体（`app.asar`）に組み込まれます。
 
 ## 2. 自分で翻訳を追加・修正する方法
-今後、新しい画面や未翻訳のテキストを見つけた場合は、以下の手順でご自身で翻訳を追加できます。
+今後、新しい画面や未翻訳のテキストを見つけた場合は、以下の手順でご自身で翻訳を追加・修正できます。
 
-1. **翻訳ファイルの場所を開く**
-   以下のフォルダにある `japanese_patch.json` をメモ帳やVSCodeなどで開きます。
-   `C:\Users\<ユーザー名>\AppData\Local\Programs\Antigravity\resources\japanese_patch.json`
-   （※Macの場合は `/Applications/Antigravity.app/Contents/Resources/japanese_patch.json` など）
+1. **翻訳ファイルを開く**
+   ダウンロードまたはクローンしたパッチフォルダ内の `japanese_patch.json` をメモ帳やVSCodeなどで開きます。
 
 2. **テキストを追加する**
    - **完全一致する短いテキストの場合（メニューなど）**:
@@ -20,24 +18,20 @@
      `"MCP_DESCRIPTIONS"` のブロックの中に、`{"prefix": "英語の先頭部分...", "translation": "日本語訳"},` を追加します。
 
 3. **反映させる**
-   ファイルを保存し、Antigravityのアプリを一度完全に終了（メニューバーからも終了）させてから、再度起動すると新しい翻訳が反映されます。
+   ファイルを保存した後、同じフォルダにある **`install.ps1`** を右クリックして「PowerShell で実行」します。
+   これにより、更新された辞書データがアプリに再適用されます。
+   最後にAntigravityのアプリを一度完全に終了させてから再度起動すると、新しい翻訳が反映されます。
 
 ## 3. アプリのアップデート時の再適用手順
-Antigravity本体のバージョンアップが行われた場合、`preload.js` が上書きされるため日本語化が外れてしまいます。
+Antigravity本体のバージョンアップが行われた場合、アプリ本体が上書きされるため日本語化が外れてしまいます。
 その場合は以下の手順で再度パッチを適用してください。
 
-1. **app.asar の解凍**
-   コマンドプロンプトやPowerShellで以下のコマンドを実行し、アプリのリソースを展開します。
-   ```bash
-   npx @electron/asar extract "C:\Users\<ユーザー名>\AppData\Local\Programs\Antigravity\resources\app.asar" app_extracted
-   ```
+1. Antigravityのアップデートを完了させる。
+2. このパッチフォルダにある **`install.ps1`** を再度右クリックして「PowerShell で実行」するだけです！
 
-2. **preload.js に読み込み処理を追加**
-   展開された `app_extracted\dist\preload.js` を開き、以下のコードを挿入します（テキストの翻訳処理関数など）。
-   ※具体的なコードは、このリポジトリの履歴や `update_preload.js` を参照してください。
-
-3. **再パッケージ化と上書き**
-   ```bash
-   npx @electron/asar pack app_extracted app.asar
-   ```
-   作成された `app.asar` を元の `resources/app.asar` に上書きコピーします。
+> 💡 **高度な情報（手動で適用する場合）**
+> インストールスクリプトが行っている内部処理は以下の通りです。
+> 1. `app.asar` を `npx @electron/asar extract` で一時フォルダに展開
+> 2. `node apply_patch.js` で `preload.js` 内に `japanese_patch.json` のデータを注入
+> 3. `npx @electron/asar pack` で再度パッケージングして元の場所へ上書き
+> 4. `app.asar.bak` として元の英語版をバックアップ
