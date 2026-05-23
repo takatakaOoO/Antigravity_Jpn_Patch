@@ -340,7 +340,15 @@
     "Yes, allow this time": "はい、今回だけ許可する",
     "(tell the agent what to do instead)": "(代わりにエージェントに指示する)",
     "Skip": "スキップ",
-    "Submit": "送信"
+    "Submit": "送信",
+    "Allow using this MCP tool?": "このMCPツールの使用を許可しますか？",
+    "Yes, and always allow in this project": "はい、このプロジェクトでは常に許可する",
+    "Yes, and always allow": "はい、常に許可する",
+    "Selecting your Environment": "環境の選択",
+    "Use the environment selector to switch between working in existing folders and creating new worktrees.": "環境セレクターを使用して、既存のフォルダでの作業と新しいワークツリーの作成を切り替えます。",
+    "Got it": "OK",
+    "Local": "ローカル",
+    "New Worktree": "新しいワークツリー"
   },
   "MCP_DESCRIPTIONS": [
     {
