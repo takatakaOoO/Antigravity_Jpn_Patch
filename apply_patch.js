@@ -20,8 +20,22 @@ const TRANSLATION_ENGINE = `
 function translateTextNode(node) {
     if (node.nodeType === 3) { // TEXT_NODE
         const text = node.textContent?.trim();
-        if (text && JA_TRANSLATIONS[text]) {
+        if (!text) return;
+        
+        // 1. 完全一致の翻訳 (JA_TRANSLATIONS)
+        if (JA_TRANSLATIONS[text]) {
             node.textContent = node.textContent.replace(text, JA_TRANSLATIONS[text]);
+            return;
+        }
+        
+        // 2. 前方一致の翻訳 (MCP_DESCRIPTIONS / Skills)
+        if (typeof MCP_DESCRIPTIONS !== 'undefined') {
+            for (const desc of MCP_DESCRIPTIONS) {
+                if (text.startsWith(desc.prefix)) {
+                    node.textContent = desc.translation;
+                    return;
+                }
+            }
         }
     }
 }
@@ -31,8 +45,22 @@ function translateAttributes(el) {
     const attrs = ['placeholder', 'title', 'aria-label', 'alt'];
     for (const attr of attrs) {
         const val = el.getAttribute?.(attr);
-        if (val && JA_TRANSLATIONS[val]) {
+        if (!val) continue;
+        
+        // 1. 完全一致
+        if (JA_TRANSLATIONS[val]) {
             el.setAttribute(attr, JA_TRANSLATIONS[val]);
+            continue;
+        }
+        
+        // 2. 前方一致
+        if (typeof MCP_DESCRIPTIONS !== 'undefined') {
+            for (const desc of MCP_DESCRIPTIONS) {
+                if (val.startsWith(desc.prefix)) {
+                    el.setAttribute(attr, desc.translation);
+                    break;
+                }
+            }
         }
     }
 }
