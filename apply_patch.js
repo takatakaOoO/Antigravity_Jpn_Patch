@@ -18,97 +18,125 @@ const TRANSLATION_ENGINE = `
 
 // テキストノードの翻訳を行う関数
 function translateTextNode(node) {
-    if (node.nodeType === 3) { // TEXT_NODE
-        const text = node.textContent?.trim();
-        if (!text) return;
-        
-        // 1. 完全一致の翻訳 (JA_TRANSLATIONS)
-        if (JA_TRANSLATIONS[text]) {
-            node.textContent = node.textContent.replace(text, JA_TRANSLATIONS[text]);
-            return;
-        }
-        
-        // 2. 前方一致の翻訳 (MCP_DESCRIPTIONS / Skills)
-        if (typeof MCP_DESCRIPTIONS !== 'undefined') {
-            for (const desc of MCP_DESCRIPTIONS) {
-                if (text.startsWith(desc.prefix)) {
-                    node.textContent = desc.translation;
-                    return;
+    try {
+        if (!node) return;
+        if (node.nodeType === 3) { // TEXT_NODE
+            const text = node.textContent?.trim();
+            if (!text) return;
+            
+            // 1. 完全一致の翻訳 (JA_TRANSLATIONS)
+            if (typeof JA_TRANSLATIONS !== 'undefined' && JA_TRANSLATIONS[text]) {
+                node.textContent = node.textContent.replace(text, JA_TRANSLATIONS[text]);
+                return;
+            }
+            
+            // 2. 前方一致の翻訳 (MCP_DESCRIPTIONS / Skills)
+            if (typeof MCP_DESCRIPTIONS !== 'undefined' && Array.isArray(MCP_DESCRIPTIONS)) {
+                for (const desc of MCP_DESCRIPTIONS) {
+                    if (desc && typeof desc.prefix === 'string' && text.startsWith(desc.prefix)) {
+                        node.textContent = desc.translation;
+                        return;
+                    }
                 }
             }
         }
+    } catch (e) {
+        console.error('Error in translateTextNode:', e);
     }
 }
 
 // placeholder, title, aria-label 等の属性を翻訳する関数
 function translateAttributes(el) {
-    const attrs = ['placeholder', 'title', 'aria-label', 'alt'];
-    for (const attr of attrs) {
-        const val = el.getAttribute?.(attr);
-        if (!val) continue;
-        
-        // 1. 完全一致
-        if (JA_TRANSLATIONS[val]) {
-            el.setAttribute(attr, JA_TRANSLATIONS[val]);
-            continue;
-        }
-        
-        // 2. 前方一致
-        if (typeof MCP_DESCRIPTIONS !== 'undefined') {
-            for (const desc of MCP_DESCRIPTIONS) {
-                if (val.startsWith(desc.prefix)) {
-                    el.setAttribute(attr, desc.translation);
-                    break;
+    try {
+        if (!el || typeof el.getAttribute !== 'function') return;
+        const attrs = ['placeholder', 'title', 'aria-label', 'alt'];
+        for (const attr of attrs) {
+            const val = el.getAttribute(attr);
+            if (!val) continue;
+            
+            // 1. 完全一致
+            if (typeof JA_TRANSLATIONS !== 'undefined' && JA_TRANSLATIONS[val]) {
+                el.setAttribute(attr, JA_TRANSLATIONS[val]);
+                continue;
+            }
+            
+            // 2. 前方一致
+            if (typeof MCP_DESCRIPTIONS !== 'undefined' && Array.isArray(MCP_DESCRIPTIONS)) {
+                for (const desc of MCP_DESCRIPTIONS) {
+                    if (desc && typeof desc.prefix === 'string' && val.startsWith(desc.prefix)) {
+                        el.setAttribute(attr, desc.translation);
+                        break;
+                    }
                 }
             }
         }
+    } catch (e) {
+        console.error('Error in translateAttributes:', e);
     }
 }
 
 // 要素とその子孫を再帰的に翻訳する関数
 function translateElement(el) {
-    if (!el) return;
-    // テキストノードを翻訳
-    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
-    let node;
-    while (node = walker.nextNode()) {
-        translateTextNode(node);
-    }
-    // 属性を翻訳
-    if (el.querySelectorAll) {
-        const allElements = el.querySelectorAll('*');
-        for (const child of allElements) {
-            translateAttributes(child);
+    try {
+        if (!el) return;
+        
+        // テキストノードを翻訳
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+        let node;
+        while (node = walker.nextNode()) {
+            translateTextNode(node);
         }
-        translateAttributes(el);
+        
+        // 属性を翻訳（対象属性を持つ要素だけをピンポイントで超高速スキャンし、負荷を劇的に排除）
+        if (el.nodeType === 1) { // ELEMENT_NODE
+            translateAttributes(el);
+            if (typeof el.querySelectorAll === 'function') {
+                const children = el.querySelectorAll('[placeholder], [title], [aria-label], [alt]');
+                for (const child of children) {
+                    translateAttributes(child);
+                }
+            }
+        }
+    } catch (e) {
+        console.error('Error in translateElement:', e);
     }
 }
 
 // DOMContentLoaded後にMutationObserverを起動
 window.addEventListener('DOMContentLoaded', () => {
-    // 初回翻訳
-    translateElement(document.body);
-    // DOMの変更を監視して動的に翻訳
-    const observer = new MutationObserver((mutations) => {
-        for (const mutation of mutations) {
-            if (mutation.type === 'childList') {
-                for (const added of mutation.addedNodes) {
-                    if (added.nodeType === 1) { // ELEMENT_NODE
-                        translateElement(added);
-                    } else if (added.nodeType === 3) { // TEXT_NODE
-                        translateTextNode(added);
+    try {
+        // 初回翻訳
+        translateElement(document.body);
+        
+        // DOMの変更を監視して動的に翻訳
+        const observer = new MutationObserver((mutations) => {
+            try {
+                for (const mutation of mutations) {
+                    if (mutation.type === 'childList') {
+                        for (const added of mutation.addedNodes) {
+                            if (added.nodeType === 1) { // ELEMENT_NODE
+                                translateElement(added);
+                            } else if (added.nodeType === 3) { // TEXT_NODE
+                                translateTextNode(added);
+                            }
+                        }
+                    } else if (mutation.type === 'characterData') {
+                        translateTextNode(mutation.target);
                     }
                 }
-            } else if (mutation.type === 'characterData') {
-                translateTextNode(mutation.target);
+            } catch (innerError) {
+                console.error('Error in mutation processing:', innerError);
             }
-        }
-    });
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        characterData: true,
-    });
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+        });
+    } catch (outerError) {
+        console.error('Error starting MutationObserver:', outerError);
+    }
 });
 `;
 
