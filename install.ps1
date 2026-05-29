@@ -1,13 +1,13 @@
-# ============================================================================
-# Antigravity 2.0 日本語化パッチ 適用スクリプト
+﻿# ============================================================================
+# Antigravity Japanese Patch - Applicator Script (Hash Check & Recovery)
 # ============================================================================
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "=== Antigravity 2.0 日本語化パッチ 適用ツール ===" -ForegroundColor Cyan
-Write-Host "このスクリプトは、AntigravityのUIを日本語化します。"
+Write-Host "=== Antigravity Japanese Patch Applicator ===" -ForegroundColor Cyan
+Write-Host "This script will apply the Japanese localization patch to Antigravity."
 
-# --- パスの設定 ---
+# --- Path Configurations ---
 $AntigravityPath = Join-Path $env:LOCALAPPDATA "Programs\Antigravity"
 $ResourcesPath = Join-Path $AntigravityPath "resources"
 $AsarFile = Join-Path $ResourcesPath "app.asar"
@@ -17,73 +17,172 @@ $TempExtract = Join-Path $ScriptDir "_temp_extract"
 $PatchScript = Join-Path $ScriptDir "apply_patch.js"
 $PatchData = Join-Path $ScriptDir "japanese_patch.json"
 
-# --- 前提確認 ---
+# SHA-256 hash of the official clean app.asar (v2.0.7)
+$ExpectedHash = "7EBE22606F03EAA7CDD0A0384B6240A0E5E20064C5EFCC0DA446A38F33AAC74B"
+
+# --- Pre-requisites Check ---
 if (-not (Test-Path $AsarFile)) {
-    Write-Host "エラー: app.asar が見つかりません: $AsarFile" -ForegroundColor Red
-    Write-Host "Antigravity 2.0 がインストールされていることを確認してください。"
+    Write-Host "Error: app.asar not found at: $AsarFile" -ForegroundColor Red
+    Write-Host "Please ensure Antigravity is installed."
     Pause
     exit 1
 }
 
-# 1. バックアップ
-Write-Host "`n[1/4] オリジナルファイルのバックアップを作成中..." -ForegroundColor Yellow
-if (-not (Test-Path $BackupFile)) {
-    Copy-Item $AsarFile $BackupFile -Force
-    Write-Host "  バックアップ完了: app.asar.bak" -ForegroundColor Green
-} else {
-    Write-Host "`n  [警告] バックアップファイル (app.asar.bak) が既に存在します！" -ForegroundColor DarkYellow
+# ----------------------------------------------------------------------------
+# 1. Pre-patch Hash Integrity Check
+# ----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "[Prep] Verifying original file integrity (SHA-256)..." -ForegroundColor Yellow
+$CurrentHashObj = Get-FileHash -Path $AsarFile -Algorithm SHA256
+$CurrentHash = $CurrentHashObj.Hash
+
+Write-Host "  Current Hash:  $CurrentHash"
+Write-Host "  Expected Hash: $ExpectedHash"
+
+if ($CurrentHash -ne $ExpectedHash) {
+    Write-Host ""
+    Write-Host "  [WARNING] Original file (app.asar) integrity check failed!" -ForegroundColor Red
     Write-Host "  ------------------------------------------------------------------"
-    Write-Host "  ・直前にAntigravity本体をアップデートした場合のみ [y] で上書きを推奨します。"
-    Write-Host "  ・翻訳データの更新（2回目以降のパッチ適用）の場合は [n] で上書きしないことを推奨します。"
-    Write-Host "  ※誤って上書きした場合、元の英語版（純正版）に復元できなくなります。"
+    Write-Host "  * This file might already be patched or is a different version."
+    Write-Host "  * Proceeding with a mismatched hash might cause startup failure."
     Write-Host "  ------------------------------------------------------------------"
     
-    $overwrite = Read-Host "  バックアップを現在の app.asar で上書き作成しますか？ (y/N)"
+    $confirm = Read-Host "  Do you want to abort the installation? (Y/n)"
+    if ($confirm -notmatch "^n$|^no$") {
+        Write-Host ""
+        Write-Host "  Cancelled by user. Exiting safely." -ForegroundColor Yellow
+        Pause
+        exit 1
+    }
+    Write-Host "  Ignoring warning. Proceeding at your own risk." -ForegroundColor DarkYellow
+} else {
+    Write-Host "  Integrity check passed! Official clean app.asar detected." -ForegroundColor Green
+}
+
+# ----------------------------------------------------------------------------
+# 2. Create Backup
+# ----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "[1/4] Backing up original app.asar..." -ForegroundColor Yellow
+if (-not (Test-Path $BackupFile)) {
+    Copy-Item $AsarFile $BackupFile -Force
+    Write-Host "  Backup created successfully: app.asar.bak" -ForegroundColor Green
+} else {
+    Write-Host ""
+    Write-Host "  [WARNING] Backup file (app.asar.bak) already exists!" -ForegroundColor DarkYellow
+    Write-Host "  ------------------------------------------------------------------"
+    Write-Host "  * If you just updated Antigravity, enter [y] to overwrite."
+    Write-Host "  * If you are just updating dictionary data, enter [n] to skip."
+    Write-Host "  * WARNING: Overwriting a patched backup will prevent restoration."
+    Write-Host "  ------------------------------------------------------------------"
+    
+    $overwrite = Read-Host "  Do you want to overwrite the backup with the current file? (y/N)"
     if ($overwrite -match "^y$|^yes$") {
         Copy-Item $AsarFile $BackupFile -Force
-        Write-Host "  バックアップを上書きしました: app.asar.bak" -ForegroundColor Green
+        Write-Host "  Backup overwritten successfully: app.asar.bak" -ForegroundColor Green
     } else {
-        Write-Host "  既存のバックアップを保持しました（スキップ）" -ForegroundColor Green
+        Write-Host "  Kept existing backup file (skipped)" -ForegroundColor Green
     }
 }
 
-# 2. asar展開
-Write-Host "`n[2/4] アプリのデータを展開中..." -ForegroundColor Yellow
+# ----------------------------------------------------------------------------
+# 3. Extract ASAR
+# ----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "[2/4] Extracting app contents..." -ForegroundColor Yellow
 if (Test-Path $TempExtract) { Remove-Item $TempExtract -Recurse -Force }
-cmd /c "npx -y @electron/asar extract `"$AsarFile`" `"$TempExtract`""
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "エラー: 展開に失敗しました。Node.jsがインストールされているか確認してください。" -ForegroundColor Red
+
+# Safe Start-Process with array argument to avoid quotation escaping issues
+$ExtractArgs = @("/c", "npx", "-y", "@electron/asar", "extract", ('"' + $AsarFile + '"'), ('"' + $TempExtract + '"'))
+$process = Start-Process -FilePath "cmd" -ArgumentList $ExtractArgs -NoNewWindow -PassThru -Wait
+
+if ($process.ExitCode -ne 0) {
+    Write-Host "Error: Extraction failed. Please check if Node.js is installed." -ForegroundColor Red
     Pause
     exit 1
 }
 
-# 3. 辞書データの注入
-Write-Host "`n[3/4] 日本語翻訳データを適用中..." -ForegroundColor Yellow
+# ----------------------------------------------------------------------------
+# 4. Inject Translation Data
+# ----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "[3/4] Applying Japanese translation patch..." -ForegroundColor Yellow
 $PreloadJs = Join-Path $TempExtract "dist\preload.js"
 node $PatchScript $PreloadJs $PatchData
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "エラー: 翻訳データの適用に失敗しました。" -ForegroundColor Red
+    Write-Host "Error: Failed to inject translation data." -ForegroundColor Red
     Pause
     exit 1
 }
 
-# 4. 再パッケージ
-Write-Host "`n[4/4] アプリを再構成中..." -ForegroundColor Yellow
+# ----------------------------------------------------------------------------
+# 5. Pack ASAR & Verify Integrity
+# ----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "[4/4] Repackaging app contents..." -ForegroundColor Yellow
 $NewAsar = Join-Path $ScriptDir "_temp_patched.asar"
-cmd /c "npx -y @electron/asar pack `"$TempExtract`" `"$NewAsar`""
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "エラー: 再構成に失敗しました。" -ForegroundColor Red
+
+# Safe Start-Process with array argument to avoid quotation escaping issues
+$PackArgs = @("/c", "npx", "-y", "@electron/asar", "pack", ('"' + $TempExtract + '"'), ('"' + $NewAsar + '"'))
+$process = Start-Process -FilePath "cmd" -ArgumentList $PackArgs -NoNewWindow -PassThru -Wait
+
+if ($process.ExitCode -ne 0) {
+    Write-Host "Error: Packaging failed." -ForegroundColor Red
     Pause
     exit 1
 }
 
-# 適用とクリーンアップ
+# Calculate hash of the newly generated temp patched file
+$PatchedHashObj = Get-FileHash -Path $NewAsar -Algorithm SHA256
+$ExpectedPatchedHash = $PatchedHashObj.Hash
+
+Write-Host ""
+Write-Host "[Apply] Copying patched file to the system..." -ForegroundColor Yellow
 Copy-Item $NewAsar $AsarFile -Force
+
+# Calculate hash of the newly copied file on system
+$AppliedHashObj = Get-FileHash -Path $AsarFile -Algorithm SHA256
+$AppliedHash = $AppliedHashObj.Hash
+
+Write-Host "  Patched Temp Hash: $ExpectedPatchedHash"
+Write-Host "  System Applied Hash: $AppliedHash"
+
+# ----------------------------------------------------------------------------
+# 6. Post-patch Verification & Auto-recovery
+# ----------------------------------------------------------------------------
+if ($AppliedHash -ne $ExpectedPatchedHash) {
+    Write-Host ""
+    Write-Host "  [FATAL ERROR] Post-patch integrity check failed!" -ForegroundColor Red
+    Write-Host "  The copied file hash does not match. The file might be corrupted." -ForegroundColor Red
+    
+    # Auto-recovery from backup
+    Write-Host "  Restoring the original file from backup for safety..." -ForegroundColor Yellow
+    if (Test-Path $BackupFile) {
+        Copy-Item $BackupFile $AsarFile -Force
+        Write-Host "  Restoration Complete: Successfully recovered original $AsarFile." -ForegroundColor Green
+    } else {
+        Write-Host "  [CRITICAL] Backup file (app.asar.bak) not found! Cannot recover." -ForegroundColor Red
+    }
+    
+    # Cleanup temp
+    Remove-Item $NewAsar -Force -ErrorAction SilentlyContinue
+    Remove-Item $TempExtract -Recurse -Force -ErrorAction SilentlyContinue
+    
+    Write-Host ""
+    Write-Host "  Operation aborted." -ForegroundColor Red
+    Pause
+    exit 1
+}
+
+# Cleanup temp files on success
 Remove-Item $NewAsar -Force
 Remove-Item $TempExtract -Recurse -Force
 
-Write-Host "`n============================================" -ForegroundColor Cyan
-Write-Host " 日本語化が完了しました！" -ForegroundColor Green
-Write-Host " Antigravity アプリを（再）起動してご確認ください。" -ForegroundColor Cyan
-Write-Host "============================================`n"
+Write-Host ""
+Write-Host "=============================================" -ForegroundColor Cyan
+Write-Host " Japanese localization applied successfully!" -ForegroundColor Green
+Write-Host " Please (re)start the Antigravity app." -ForegroundColor Cyan
+Write-Host "=============================================" -ForegroundColor Cyan
+Write-Host ""
 Pause
+
