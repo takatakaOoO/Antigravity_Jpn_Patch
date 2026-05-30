@@ -47,13 +47,7 @@ if ($CurrentHash -ne $ExpectedHash) {
     Write-Host "  * ハッシュ値が不一致のまま適用を続行すると、アプリが正常に起動しなくなる恐れがあります。"
     Write-Host "  ------------------------------------------------------------------"
     
-    $confirm = Read-Host "  インストールを安全に中止しますか？ (Y/n) (※推奨: Y)"
-    if ($confirm -notmatch "^n$|^no$") {
-        Write-Host ""
-        Write-Host "  ユーザーによってキャンセルされました。安全に終了します。" -ForegroundColor Yellow
-        Pause
-        exit 1
-    }
+    Write-Host "  自動実行モード: 警告を無視して適用を続行します。" -ForegroundColor Yellow
     Write-Host "  警告を無視して続行します。動作保証外となりますのでご注意ください。" -ForegroundColor DarkYellow
 } else {
     Write-Host "  整合性検証に合格しました！ 公式純正の app.asar を検出しました。" -ForegroundColor Green
@@ -76,13 +70,7 @@ if (-not (Test-Path $BackupFile)) {
     Write-Host "  * 注意: パッチ適用済みのバックアップを上書きすると、元の純正状態に復元できなくなります。"
     Write-Host "  ------------------------------------------------------------------"
     
-    $overwrite = Read-Host "  現在のクリーンな状態でバックアップファイルを上書きしますか？ (y/N)"
-    if ($overwrite -match "^y$|^yes$") {
-        Copy-Item $AsarFile $BackupFile -Force
-        Write-Host "  バックアップが正常に上書きされました: app.asar.bak" -ForegroundColor Green
-    } else {
-        Write-Host "  既存のバックアップファイルを保持しました（上書きスキップ）" -ForegroundColor Green
-    }
+    Write-Host "  自動実行モード: 既存のバックアップファイルを安全に保持します（上書きスキップ）" -ForegroundColor Green
 }
 
 # ----------------------------------------------------------------------------

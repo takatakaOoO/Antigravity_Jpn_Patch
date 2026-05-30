@@ -107,16 +107,23 @@ function translateTextNode(node) {
             }
             
             // 4. コマンド実行承認プロンプトの動的日本語化
-            if (text.startsWith('Yes, and always allow')) {
-                let newValue = text;
-                if (text.endsWith('in this project')) {
-                    newValue = text.replace('Yes, and always allow', 'はい、このプロジェクトでは')
-                                   .replace('in this project', 'を常に許可する');
-                } else {
-                    newValue = text.replace('Yes, and always allow', 'はい、') + 'を常に許可する';
+            const normalizedText = text.replace(/\s+/g, ' ');
+            const matchProject = normalizedText.match(/^Yes,\s+and\s+always\s+allow\s+([\s\S]+?)\s+in\s+this\s+project$/i);
+            if (matchProject) {
+                const cmd = matchProject[1];
+                const newValue = 'はい、このプロジェクトでは ' + cmd + ' を常に許可する';
+                if (node.textContent !== newValue) {
+                    node.__translation_count++;
+                    node.textContent = newValue;
+                    node.__translated = true; // 翻訳成功マーク
                 }
-                newValue = newValue.replace(', を常に許可する', ' を常に許可する');
-                
+                return;
+            }
+            
+            const matchAlways = normalizedText.match(/^Yes,\s+and\s+always\s+allow\s+([\s\S]+?)$/i);
+            if (matchAlways) {
+                const cmd = matchAlways[1];
+                const newValue = 'はい、 ' + cmd + ' を常に許可する';
                 if (node.textContent !== newValue) {
                     node.__translation_count++;
                     node.textContent = newValue;
