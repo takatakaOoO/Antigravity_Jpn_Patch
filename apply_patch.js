@@ -18,11 +18,53 @@ const TRANSLATION_ENGINE = `
 
 let isTranslating = false;
 
+// エディタ（Monaco Editorなど）や干渉しやすい特定要素をスキップする判定関数
+function shouldSkipElement(el) {
+    try {
+        if (!el) return false;
+        if (el.nodeType !== 1) return false;
+        
+        const className = el.className;
+        if (typeof className === 'string' && (
+            className.includes('monaco-') || 
+            className.includes('editor') || 
+            className.includes('overflow-guard')
+        )) {
+            return true;
+        }
+        
+        // 親要素を3階層上まで遡ってチェック
+        let parent = el.parentElement;
+        let depth = 0;
+        while (parent && depth < 3) {
+            const pClass = parent.className;
+            if (typeof pClass === 'string' && (
+                pClass.includes('monaco-') || 
+                pClass.includes('editor') || 
+                pClass.includes('overflow-guard')
+            )) {
+                return true;
+            }
+            parent = parent.parentElement;
+            depth++;
+        }
+    } catch (e) {
+        // 安全のために例外発生時はスキップしない
+    }
+    return false;
+}
+
 // テキストノードの翻訳を行う関数
 function translateTextNode(node) {
     try {
         if (!node) return;
         if (node.__translated) return; // 既に翻訳済みならスキップ
+        
+        // アプリ側JSとの無限書き換え合戦（デッドロックフリーズ）を物理的に防ぐ制限
+        node.__translation_count = node.__translation_count || 0;
+        if (node.__translation_count > 3) {
+            return; // 3回以上の書き換え競合時は強制スキップ
+        }
         
         if (node.nodeType === 3) { // TEXT_NODE
             const text = node.textContent?.trim();
@@ -30,8 +72,12 @@ function translateTextNode(node) {
             
             // 1. 完全一致の翻訳 (JA_TRANSLATIONS)
             if (typeof JA_TRANSLATIONS !== 'undefined' && JA_TRANSLATIONS[text]) {
-                node.textContent = node.textContent.replace(text, JA_TRANSLATIONS[text]);
-                node.__translated = true; // 翻訳成功マーク
+                const newValue = node.textContent.replace(text, JA_TRANSLATIONS[text]);
+                if (node.textContent !== newValue) {
+                    node.__translation_count++;
+                    node.textContent = newValue;
+                    node.__translated = true; // 翻訳成功マーク
+                }
                 return;
             }
             
@@ -39,8 +85,11 @@ function translateTextNode(node) {
             if (typeof MCP_DESCRIPTIONS !== 'undefined' && Array.isArray(MCP_DESCRIPTIONS)) {
                 for (const desc of MCP_DESCRIPTIONS) {
                     if (desc && typeof desc.prefix === 'string' && text.startsWith(desc.prefix)) {
-                        node.textContent = desc.translation;
-                        node.__translated = true; // 翻訳成功マーク
+                        if (node.textContent !== desc.translation) {
+                            node.__translation_count++;
+                            node.textContent = desc.translation;
+                            node.__translated = true; // 翻訳成功マーク
+                        }
                         return;
                     }
                 }
@@ -55,6 +104,8 @@ function translateTextNode(node) {
 function translateAttributes(el) {
     try {
         if (!el || typeof el.getAttribute !== 'function') return;
+        if (shouldSkipElement(el)) return; // エディタ等の要素ならスキップ
+        
         const attrs = ['placeholder', 'title', 'aria-label', 'alt'];
         for (const attr of attrs) {
             const val = el.getAttribute(attr);
@@ -85,6 +136,7 @@ function translateAttributes(el) {
 function translateElement(el) {
     try {
         if (!el) return;
+        if (shouldSkipElement(el)) return; // エディタ等の要素ならスキップ
         
         // 1. テキストノードを安全に配列に抽出（走査中のDOM改変による無限ループを防ぐ）
         const textNodes = [];
@@ -105,7 +157,9 @@ function translateElement(el) {
             if (typeof el.querySelectorAll === 'function') {
                 const children = el.querySelectorAll('[placeholder], [title], [aria-label], [alt]');
                 for (const child of children) {
-                    translateAttributes(child);
+                    if (!shouldSkipElement(child)) {
+                        translateAttributes(child);
+                    }
                 }
             }
         }
@@ -135,14 +189,25 @@ window.addEventListener('DOMContentLoaded', () => {
                     if (mutation.type === 'childList') {
                         for (const added of mutation.addedNodes) {
                             if (added.nodeType === 1) { // ELEMENT_NODE
-                                translateElement(added);
+                                if (!shouldSkipElement(added)) {
+                                    translateElement(added);
+                                }
                             } else if (added.nodeType === 3) { // TEXT_NODE
+                                // テキストノードの親がエディタ関連ならスキップ
+                                if (added.parentElement && shouldSkipElement(added.parentElement)) {
+                                    continue;
+                                }
                                 // アプリ側の動的更新に対応するため、翻訳マークを一度リセット
                                 added.__translated = false;
                                 translateTextNode(added);
                             }
                         }
                     } else if (mutation.type === 'characterData') {
+                        // テキストノードの親がエディタ関連ならスキップ
+                        const targetParent = mutation.target.parentElement;
+                        if (targetParent && shouldSkipElement(targetParent)) {
+                            continue;
+                        }
                         // アプリ側の動的更新に対応するため、翻訳マークを一度リセット
                         mutation.target.__translated = false;
                         translateTextNode(mutation.target);
