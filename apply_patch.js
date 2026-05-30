@@ -94,6 +94,17 @@ function translateTextNode(node) {
                     }
                 }
             }
+            
+            // 3. 部分一致の翻訳 (tools enabled 等の動的数値を含む表記)
+            if (text.includes('tools enabled')) {
+                const newValue = node.textContent.replace('tools enabled', '個のツールを有効化');
+                if (node.textContent !== newValue) {
+                    node.__translation_count++;
+                    node.textContent = newValue;
+                    node.__translated = true; // 翻訳成功マーク
+                }
+                return;
+            }
         }
     } catch (e) {
         console.error('Error in translateTextNode:', e);

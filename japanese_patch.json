@@ -1,5 +1,15 @@
 {
   "JA_TRANSLATIONS": {
+    "Account": "アカウント",
+    "Permissions": "権限設定",
+    "Models": "モデル",
+    "Customizations": "カスタマイズ",
+    "Browser": "ブラウザ",
+    "App": "アプリ設定",
+    "Projects": "プロジェクト",
+    "Show all": "すべて表示",
+    "Not in Project": "プロジェクト外",
+    "Shortcuts": "ショートカット",
     "New chat": "新しいチャット",
     "New Chat": "新しいチャット",
     "History": "履歴",
