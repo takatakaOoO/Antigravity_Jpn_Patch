@@ -105,6 +105,25 @@ function translateTextNode(node) {
                 }
                 return;
             }
+            
+            // 4. コマンド実行承認プロンプトの動的日本語化
+            if (text.startsWith('Yes, and always allow')) {
+                let newValue = text;
+                if (text.endsWith('in this project')) {
+                    newValue = text.replace('Yes, and always allow', 'はい、このプロジェクトでは')
+                                   .replace('in this project', 'を常に許可する');
+                } else {
+                    newValue = text.replace('Yes, and always allow', 'はい、') + 'を常に許可する';
+                }
+                newValue = newValue.replace(', を常に許可する', ' を常に許可する');
+                
+                if (node.textContent !== newValue) {
+                    node.__translation_count++;
+                    node.textContent = newValue;
+                    node.__translated = true; // 翻訳成功マーク
+                }
+                return;
+            }
         }
     } catch (e) {
         console.error('Error in translateTextNode:', e);
