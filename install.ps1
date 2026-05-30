@@ -17,7 +17,7 @@ $TempExtract = Join-Path $ScriptDir "_temp_extract"
 $PatchScript = Join-Path $ScriptDir "apply_patch.js"
 $PatchData = Join-Path $ScriptDir "japanese_patch.json"
 
-# 公式最新純正 app.asar (v2.0.7) の SHA-256 ハッシュ値
+# 公式最新純正 app.asar (v2.0.10) の SHA-256 ハッシュ値
 $ExpectedHash = "7EBE22606F03EAA7CDD0A0384B6240A0E5E20064C5EFCC0DA446A38F33AAC74B"
 
 # --- 前提条件のチェック ---
