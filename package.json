@@ -1,0 +1,12 @@
+{
+  "name": "antigravity-jpn-patcher",
+  "version": "2.0.11",
+  "description": "Standalone Windows executable patcher for Antigravity",
+  "main": "patcher.js",
+  "scripts": {
+    "build": "pkg patcher.js --targets node18-win-x64 --output AntigravityJpnPatcher.exe"
+  },
+  "dependencies": {
+    "@electron/asar": "^3.2.14"
+  }
+}

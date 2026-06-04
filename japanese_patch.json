@@ -624,6 +624,14 @@
     {
       "prefix": "Plugins are packaged collections of skills and MCPs",
       "translation": "プラグインは、AntigravityのエージェントがGoogle開発者製品と連携するのを支援する、スキルとMCPのパッケージコレクションです。これらの選択は設定からいつでも変更できます。"
+    },
+    {
+      "prefix": "Query your GitLab SDLC as a knowledge graph.",
+      "translation": "GitLab SDLC をナレッジグラフとしてクエリします。Orbit はグループ、プロジェクト、ソースコード、マージリクエスト、パイプラインなどを単一のグラフにインデックス化します。"
+    },
+    {
+      "prefix": "Interact directly with the PostHog product analytics platform",
+      "translation": "自然言語を使用してPostHog製品分析プラットフォームと直接対話します。クエリの実行、機能フラグの管理、エラーの追跡、プロジェクトの管理を行えます。"
     }
   ]
 }
