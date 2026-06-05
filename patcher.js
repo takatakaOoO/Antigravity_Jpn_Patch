@@ -272,6 +272,39 @@ function getFileHash(filePath) {
     return hashSum.digest('hex').toUpperCase();
 }
 
+function getUnpackedGlobs(unpackedDir) {
+    const results = [];
+    if (!fs.existsSync(unpackedDir)) return results;
+    
+    function scan(dir, relPath) {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        let hasFiles = false;
+        for (const e of entries) {
+            if (e.isFile()) hasFiles = true;
+        }
+        if (hasFiles) {
+            results.push('**/' + relPath.replace(/\\\\/g, '/') + '/**/*');
+        } else {
+            for (const e of entries) {
+                if (e.isDirectory()) {
+                    scan(path.join(dir, e.name), relPath ? relPath + '/' + e.name : e.name);
+                }
+            }
+        }
+    }
+    
+    const entries = fs.readdirSync(unpackedDir, { withFileTypes: true });
+    for (const e of entries) {
+        if (e.isDirectory()) {
+            scan(path.join(unpackedDir, e.name), e.name);
+        } else if (e.isFile()) {
+            results.push('**/' + e.name);
+        }
+    }
+    
+    return results;
+}
+
 async function main() {
     console.log("=== Antigravity 日本語化パッチ適用ツール ===");
     console.log("このツールは、Antigravityに日本語化パッチを安全に適用します。");
@@ -378,7 +411,15 @@ async function main() {
     console.log("\\n[4/4] アプリケーションのコンテンツを再パッケージしています...");
     const tempAsar = path.join(resourcesPath, '_temp_patched.asar');
     try {
-        await asar.createPackage(tempExtract, tempAsar);
+        const options = {};
+        const unpackedGlobs = getUnpackedGlobs(asarFile + '.unpacked');
+        if (unpackedGlobs.length > 0) {
+            options.unpack = '{' + unpackedGlobs.join(',') + ',*.node,*.dll,*.exe}';
+            console.log("  自動検出されたunpack設定を適用します...");
+        } else {
+            options.unpack = '*.node,*.dll,*.exe';
+        }
+        await asar.createPackageWithOptions(tempExtract, tempAsar, options);
     } catch (err) {
         console.error("エラー: 再パッケージ化に失敗しました。", err);
         process.exit(1);
