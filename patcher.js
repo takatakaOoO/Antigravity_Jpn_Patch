@@ -376,10 +376,10 @@ async function main() {
 
         const jaString = 'const JA_TRANSLATIONS = ' + JSON.stringify(patchData.JA_TRANSLATIONS, null, 4) + ';';
         const mcpString = 'const MCP_DESCRIPTIONS = ' + JSON.stringify(patchData.MCP_DESCRIPTIONS, null, 4) + ';';
-        const replacement = '// --- Antigravity Japanese Patch Start ---\\n' + jaString + '\\n\\n' + mcpString + '\\n' + TRANSLATION_ENGINE + '\\n// --- Antigravity Japanese Patch End ---';
+        const replacement = '// --- Antigravity Japanese Patch Start ---\n' + jaString + '\n\n' + mcpString + '\n' + TRANSLATION_ENGINE + '\n// --- Antigravity Japanese Patch End ---';
 
-        const regexPatchBlock = new RegExp("\\\\/\\\\/ --- Antigravity Japanese Patch Start ---[\\\\s\\\\S]*?\\\\/\\\\/ --- Antigravity Japanese Patch End ---");
-        const regexOldOriginal = new RegExp("const JA_TRANSLATIONS = \\\\{[\\\\s\\\\S]*?const MCP_DESCRIPTIONS = \\\\[[\\\\s\\\\S]*?\\\\];");
+        const regexPatchBlock = /\/\/ --- Antigravity Japanese Patch Start ---[\s\S]*?\/\/ --- Antigravity Japanese Patch End ---/;
+        const regexOldOriginal = /const JA_TRANSLATIONS = \{[\s\S]*?const MCP_DESCRIPTIONS = \[[\s\S]*?\];/;
 
         let updatedContent = '';
         let isUpdated = false;
@@ -393,7 +393,7 @@ async function main() {
             isUpdated = true;
             console.log('  Old style translation block upgraded to new patch block.');
         } else {
-            updatedContent = content.trim() + '\\n\\n' + replacement + '\\n';
+            updatedContent = content.trim() + '\n\n' + replacement + '\n';
             isUpdated = true;
             console.log('  New Japanese Patch block successfully injected into preload.js.');
         }
