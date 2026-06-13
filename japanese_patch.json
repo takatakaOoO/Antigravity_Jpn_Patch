@@ -647,6 +647,14 @@
     {
       "prefix": "Interact directly with the PostHog product analytics platform",
       "translation": "自然言語を使用してPostHog製品分析プラットフォームと直接対話します。クエリの実行、機能フラグの管理、エラーの追跡、プロジェクトの管理を行えます。"
+    },
+    {
+      "prefix": "The gopls Model Context Protocol (MCP) server provides tools for semantic code analysis",
+      "translation": "gopls MCPサーバーは、非google3 Goコードベースのセマンティックコード解析、ライブ診断、変換のためのツールを提供します。"
+    },
+    {
+      "prefix": "The Spanner remote MCP server lets you access and run Spanner tools",
+      "translation": "Spanner リモートMCPサーバーを使用すると、AI対応の開発環境からSpannerツールにアクセスして実行し、Spannerリソースの作成、管理、クエリを行えます。"
     }
   ]
 }
