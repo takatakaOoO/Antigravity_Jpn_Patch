@@ -358,7 +358,22 @@
     "Use the environment selector to switch between working in existing folders and creating new worktrees.": "環境セレクターを使用して、既存のフォルダでの作業と新しいワークツリーの作成を切り替えます。",
     "Got it": "OK",
     "Local": "ローカル",
-    "New Worktree": "新しいワークツリー"
+    "New Worktree": "新しいワークツリー",
+    "Plan": "プラン",
+    "Upgrade": "アップグレード",
+    "View plans": "プランを見る",
+    "View Plans": "プランを見る",
+    "Your Plan: Antigravity Starter Quota": "ご利用プラン: Antigravity スタータークォータ",
+    "Free users and Google AI Plus users receive the minimum base limits on Antigravity. You can upgrade to Google AI Pro or above to receive higher rate limits.": "無料ユーザーおよびGoogle AI Plusユーザーは、Antigravityの最低基本制限が適用されます。Google AI Pro以上にアップグレードすると、より高いレート制限を受けることができます。",
+    "Model Credits": "モデルクレジット",
+    "Within each group, models share a weekly limit. Quota is consumed proportionally to the cost of the tokens. Thus, limits will last longer with shorter tasks or using more cost-effective models. Your weekly limit is tied directly to your individual tier.": "各グループ内でモデルは週間制限を共有します。クォータはトークンのコストに比例して消費されます。そのため、短いタスクやコスト効率の高いモデルを使用すると制限がより長く持続します。週間制限はお客様の個別のティアに直接紐づいています。",
+    "Gemini Models": "Gemini モデル",
+    "Claude and GPT models": "Claude / GPT モデル",
+    "Weekly Limit": "週間制限",
+    "You have used some of your weekly limit, it will fully refresh in": "週間制限の一部を使用しました。完全に回復するまであと",
+    "Global": "グローバル",
+    "Plugin:": "プラグイン:",
+    "Creates a new multi-agent development project by copying the policy files and directory structure from the template, and automatically defining the 6 required subagents (architect, frontend, backend, qa,...": "テンプレートからポリシーファイルとディレクトリ構造をコピーして新しいマルチエージェント開発プロジェクトを作成し、必要な6つのサブエージェント（architect、frontend、backend、qa、...）を自動定義します。"
   },
   "MCP_DESCRIPTIONS": [
     {

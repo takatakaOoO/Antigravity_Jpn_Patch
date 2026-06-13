@@ -103,6 +103,23 @@ function translateTextNode(node) {
                 return;
             }
             
+            // 3.5 週間制限の残り時間表示（動的数値を含む）
+            const refreshMatch = text.match(/You have used some of your weekly limit,\\s*it will fully refresh in\\s*(.+)/i);
+            if (refreshMatch) {
+                let timeStr = refreshMatch[1].replace(/\\.$/, '');
+                timeStr = timeStr.replace(/(\\d+)\\s*days?/gi, '$1日');
+                timeStr = timeStr.replace(/(\\d+)\\s*hours?/gi, '$1時間');
+                timeStr = timeStr.replace(/(\\d+)\\s*minutes?/gi, '$1分');
+                timeStr = timeStr.replace(/,\\s*/g, '');
+                const newValue = '週間制限の一部を使用しました。完全に回復するまであと ' + timeStr.trim() + ' です。';
+                if (node.textContent !== newValue) {
+                    node.__translation_count++;
+                    node.textContent = newValue;
+                    node.__translated = true;
+                }
+                return;
+            }
+            
             // 4. コマンド実行承認プロンプトの動的日本語化
             const normalizedText = text.replace(/\\s+/g, ' ');
             const matchProject = normalizedText.match(/^Yes,\\s+and\\s+always\\s+allow\\s+([\\s\\S]+?)\\s+in\\s+this\\s+project$/i);
