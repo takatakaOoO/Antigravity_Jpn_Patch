@@ -4,7 +4,7 @@ const asar = require('@electron/asar');
 const crypto = require('crypto');
 const patchData = require('./japanese_patch.json');
 
-const EXPECTED_HASH = "A791AEAC5768EB54BAEE60166EED149427110D8CD3CEE3B48842E7224734D5DF";
+const EXPECTED_HASH = "CACE40B421A3CB9326EF2F0B430EA59CCC4C2AFDC4099FE6910687DDCC1D13FF";
 
 const TRANSLATION_ENGINE = `
 // ===========================================================================
