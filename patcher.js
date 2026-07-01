@@ -4,7 +4,7 @@ const asar = require('@electron/asar');
 const crypto = require('crypto');
 const patchData = require('./japanese_patch.json');
 
-const EXPECTED_HASH = "CACE40B421A3CB9326EF2F0B430EA59CCC4C2AFDC4099FE6910687DDCC1D13FF";
+const EXPECTED_HASH = "7886986D69B5152D800F8EE4327FE64A76642D0EDD3BA1B4A7173973AC742069";
 
 const TRANSLATION_ENGINE = `
 // ===========================================================================
@@ -15,30 +15,58 @@ const TRANSLATION_ENGINE = `
 
 let isTranslating = false;
 
-// エディタ（Monaco Editorなど）や干渉しやすい特定要素をスキップする判定関数
+// エディタ（Monaco Editorなど）やチャット履歴等の特定要素をスキップする判定関数
 function shouldSkipElement(el) {
     try {
         if (!el) return false;
         if (el.nodeType !== 1) return false;
         
+        // タグ名によるスキップ（コードブロック、入力欄など）
+        const tagName = el.tagName?.toUpperCase();
+        if (tagName === 'PRE' || tagName === 'CODE' || tagName === 'INPUT' || tagName === 'TEXTAREA') {
+            return true;
+        }
+        
+        // 編集可能なコンテンツもスキップ
+        if (el.getAttribute('contenteditable') === 'true') {
+            return true;
+        }
+
         const className = el.className;
         if (typeof className === 'string' && (
             className.includes('monaco-') || 
             className.includes('editor') || 
-            className.includes('overflow-guard')
+            className.includes('overflow-guard') ||
+            className.includes('message') ||       // チャットメッセージ
+            className.includes('chat') ||          // チャット領域全般
+            className.includes('prompt') ||        // プロンプト入力・表示
+            className.includes('bubble') ||        // チャットバブル
+            className.includes('response') ||      // AIの回答領域
+            className.includes('markdown')         // レンダリングされたMarkdown
         )) {
             return true;
         }
         
-        // 親要素を3階層上まで遡ってチェック
+        // 親要素を5階層上まで遡ってチェック（メッセージコンテナ内にネストされた要素も保護する）
         let parent = el.parentElement;
         let depth = 0;
-        while (parent && depth < 3) {
+        while (parent && depth < 5) {
+            const pTagName = parent.tagName?.toUpperCase();
+            if (pTagName === 'PRE' || pTagName === 'CODE' || parent.getAttribute('contenteditable') === 'true') {
+                return true;
+            }
+            
             const pClass = parent.className;
             if (typeof pClass === 'string' && (
                 pClass.includes('monaco-') || 
                 pClass.includes('editor') || 
-                pClass.includes('overflow-guard')
+                pClass.includes('overflow-guard') ||
+                pClass.includes('message') ||
+                pClass.includes('chat') ||
+                pClass.includes('prompt') ||
+                pClass.includes('bubble') ||
+                pClass.includes('response') ||
+                pClass.includes('markdown')
             )) {
                 return true;
             }

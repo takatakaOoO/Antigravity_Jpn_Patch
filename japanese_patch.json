@@ -377,6 +377,110 @@
   },
   "MCP_DESCRIPTIONS": [
     {
+      "prefix": "Interact with your Harness account using natural language. This MCP server lets AI agents",
+      "translation": "自然言語を使用してHarnessアカウントと対話します。このMCPサーバーは、AIエージェントによるCI/CDパイプライン、実行、サービス、環境、コネクタの検査や管理を可能にします。"
+    },
+    {
+      "prefix": "The AlloyDB for PostgreSQL remote MCP server",
+      "translation": "AlloyDB for PostgreSQL リモート MCP サーバーを使用すると、AlloyDB ツールにアクセスして実行し、AlloyDB クラスタやインスタンスの管理、ユーザー管理、バックアップの作成や復元などを行えます。"
+    },
+    {
+      "prefix": "Automated data quality and transformation capabilities for Dataform/dbt/BigQuery pipelines.",
+      "translation": "Dataform/dbt/BigQueryパイプライン向けのデータ品質自動クレンジングおよび変換機能です。BigQueryまたはCloud Storage (GCS)をソースとするデータを処理し、データ取り込み、移動、スキーマ配備におけるベストプラクティスを適用します。"
+    },
+    {
+      "prefix": "Expertise in generating clean, correct, and efficient Dataform pipeline code for BigQuery ELT.",
+      "translation": "BigQuery ELT向けの、クリーンで正確かつ効率的なDataformパイプラインコードを生成するスキルです。Dataform、SQLX、またはBigQueryが変換処理で言及されている場合、あるいはDataformのパイプラインやアクション、ソース定義を作成・変更する場合に使用します。"
+    },
+    {
+      "prefix": "Expert guidance for creating, modifying, and optimizing dbt pipelines for BigQuery.",
+      "translation": "BigQuery向けのdbtパイプラインの作成、変更、最適化に関する専門的なガイドを提供します。ユーザーがdbtモデルやプロジェクトの生成・変更を求めた場合に使用します。"
+    },
+    {
+      "prefix": "A repository of BigQuery-specific logic, knowledge, and specialized standards.",
+      "translation": "BigQuery特有のロジック、ナレッジ、専門標準のデータベースです。BigQueryのクエリ最適化、BigFrames Pythonコード、BigQuery ML/AI機能など、BigQueryに関連するあらゆる作業を行う際に使用します。"
+    },
+    {
+      "prefix": "Finds and inspects data assets within Google Cloud.",
+      "translation": "Google Cloud内のデータ資産を検索および検査します。GCP内のデータ資産（BigQueryのデータセット/テーブル/ビュー、Spannerインスタンスなど）の探索、またはそのスキーマやメタデータの取得が必要な場合に使用します。"
+    },
+    {
+      "prefix": "Sets up Google Cloud Lakehouse federated catalogs to remote Iceberg REST Catalogs.",
+      "translation": "Google Cloud LakehouseのフェデレーションカタログをリモートのIceberg RESTカタログにセットアップします。現在、Databricks UnityやAWS Glueカタログに対応しており、DatabricksやS3上のデータをBigQuery等からクエリできるように接続します。"
+    },
+    {
+      "prefix": "Guidelines for identifying and resolving missing Google Cloud authentication and Application",
+      "translation": "Google Cloudの認証エラーやアプリケーションデフォルト認証情報（ADC）の欠落を特定・解決するためのガイドラインです。gcloud、bq、dataform、またはPythonライブラリが認証エラーを返した場合に使用します。"
+    },
+    {
+      "prefix": "Provides expert guidance for troubleshooting Cloud Composer (Apache Airflow) and Orchestration pipelines.",
+      "translation": "Cloud Composer (Apache Airflow) およびオーケストレーションパイプラインのトラブルシューティングに関する専門的なガイドを提供します。パイプラインの失敗の解決や根本原因分析（RCA）レポートの生成時に使用します。"
+    },
+    {
+      "prefix": "Primary entry point for building, managing, and orchestrating data pipelines on Google Cloud.",
+      "translation": "Google Cloud上でのデータパイプラインの構築、管理、オーケストレーションの主要なエントリポイントです。dbt、Dataflow、Dataform、Spark、またはCloud Composerを用いたパイプライン開発の要件定義やアプローチ選定をガイドします。"
+    },
+    {
+      "prefix": "Guides writing, packaging, executing, and troubleshooting Apache Beam pipelines on Dataflow.",
+      "translation": "Dataflow上でのApache Beamパイプラインの記述、パッケージ化、実行、トラブルシューティングをガイドします。新規パイプライン構築やFlexテンプレート構成、パフォーマンス分析、自動スケーリングの診断などに使用します。"
+    },
+    {
+      "prefix": "This skill helps the agent generate or update orchestration pipeline definitions for Google Cloud Composer",
+      "translation": "Google Cloud Composer用のオーケストレーションパイプライン定義（DAG）の生成または更新を支援します。dbt、Notebook、Sparkジョブ、Dataform、SQLクエリなどの連携実行とデプロイ、トリガー設定を処理します。"
+    },
+    {
+      "prefix": "Automates declarative resource creation and provisioning for data pipelines, supporting BigQuery, Dataform,",
+      "translation": "データパイプラインに必要なBigQuery、Dataform、Dataproc等のリソースの宣言的作成とプロビジョニングを自動化します。deployment.yamlを使用した環境固有の設定管理を処理します。"
+    },
+    {
+      "prefix": "Develops and executes Spark code on Dataproc Clusters and Serverless.",
+      "translation": "Dataprocクラスタおよびサーバーレス上でのSparkコードの開発と実行を支援します。BigLake Icebergカタログ、BigQuery、Spannerを使用したデータの読み書きや、ETL処理、機械学習モデルの訓練・推論、実行失敗時のデバッグに対応します。"
+    },
+    {
+      "prefix": "Ensures proper Python dependency management",
+      "translation": "グローバル環境への 'pip install' を避け、プロジェクト固有のツールに準拠した適切なPython依存関係管理を保証します。Pythonパッケージの追加・変更や新規プロジェクト開始時、Jupyter Notebook内でのパッケージ利用前などに使用します。"
+    },
+    {
+      "prefix": "CRITICAL RULE: You MUST use this skill whenever the task involves any machine learning",
+      "translation": "**最重要ルール**: タスクに機械学習（クラスタリング、分類、回帰、時系列予測等）やデータ分析、統計テストが含まれる場合は、必ずこのスキルを使用してください。データ分析手順の決定や視覚化ロジックの構築に使用します。"
+    },
+    {
+      "prefix": "This skill guides the use of Jupyter notebooks for data analysis, exploration, and visualization,",
+      "translation": "データ分析、探索、視覚化のためのJupyter Notebook（特にBigQuery連携）の使用をガイドします。セルの実行・検証、ライブラリのインストール、および%%bqsqlマジックを使用したクエリ実行などのベストプラクティスを定義しています。"
+    },
+    {
+      "prefix": "Creates a new multi-agent development project by copying the policy files and directory structure",
+      "translation": "テンプレートからポリシーファイルとディレクトリ構造をコピーし、必要な6つのサブエージェント（architect、frontend、backend、qa、automation、marketer）を自動定義して、新しいマルチエージェント開発環境を構築します。"
+    },
+    {
+      "prefix": "Use this to fix and re-install agent skills",
+      "translation": "インストールに失敗したエージェントスキルを修復し、再インストールします。修正適用後に manifest.json を安全に更新するためのコンテキストと権限を提供します。"
+    },
+    {
+      "prefix": "Investigate and fix software issues using AI",
+      "translation": "AIを活用した根本原因分析（RCA）を使用してソフトウェアのバグを調査・修正します。このMCPサーバーはAntimetalアカウントに接続し、イシューの検索や因果関係レポートの読み取りを行います。"
+    },
+    {
+      "prefix": "Query and act on your marketing, analytics, CRM, e-commerce, and warehouse data",
+      "translation": "Meta広告、Google広告、TikTok広告、GA4、HubSpot、Salesforce、Shopifyなど、325以上のコネクタにまたがるマーケティング、アナリティクス、CRM、Eコマース、ウェアハウスデータを照会・操作します。"
+    },
+    {
+      "prefix": "**STOP AND VERIFY**: Before running any command or tool",
+      "translation": "**確認と停止**: 不可逆的なデータ消失を伴うコマンドやツールを実行する前に、必ずユーザーの明示的な同意を得てください。迷った場合は質問してください。誤って本番データや重要なプロジェクト資産を削除するよりも、確認を待つ方が賢明です。対象事例: - SQL: DROP TABLE/VIEW/SCHEMA/DATABASE、TRUNCATE、または広範な DELETE。 - クラウドストレージ: 本番データや重要なバケットを対象とする gsutil rm または gcloud storage rm。 - インフラ: gcloud projects delete、Spanner/BigQuery/Dataproc リソースの削除、シークレットの削除、KMSキーの破棄。"
+    },
+    {
+      "prefix": "Provides a comprehensive guide, quick reference, and sitemap for Google Antigravity",
+      "translation": "Antigravity CLI (agy)、Antigravity 2.0、Antigravity IDE、Python SDK、スラッシュコマンド、キーバインド、カスタマイズ（スキル、ルール、MCP、サイドカー）を含む、Google Antigravity (AGY) の包括的なガイド、クイックリファレンス、およびサイトマップを提供します。ユーザーが Antigravity、AGY、agy CLI、Antigravity IDE、または Antigravity 2.0 の使用、設定、カスタマイズについて質問したときに、このスキルを有効にします。"
+    },
+    {
+      "prefix": "Discovers and inspects BigQuery Data Transfer Service (DTS) configurations.",
+      "translation": "BigQuery Data Transfer Service (DTS) の構成を検出および検査します。データパイプラインにおける既存の取り込みパイプラインの特定や、データソースまたは転送構成メタデータの抽出に使用します。ユーザーがデータパイプラインの構築や管理中に取り込みシナリオについて尋ねた場合、またはDTS転送によって既に管理されている可能性のあるデータの「取り込み」や「追加」を要求した場合に使用します。"
+    },
+    {
+      "prefix": "Build modern data apps, dashboards, and interactive reports using either",
+      "translation": "React + Vite または Streamlit を使用して、モダンなデータアプリ、ダッシュボード、インタラクティブなレポートを構築します。AIを活用した「データとのチャット」体験を提供する、オプションの Gemini Data Analytics チャット統合機能が含まれています。適用条件: 1. ユーザーがデータダッシュボード、データアプリケーション、またはビジュアライゼーションUIの構築を明示的に要求し、そのUIがGCPデータベース（特に指定がない限りデフォルトはBigQuery）からデータを取得する場合。2. GCPデータソースと対話、クエリ、および視覚化を行うためのフロントエンドWebアプリケーションを生成する必要がある場合。3. ユーザーが「データとのチャット」体験の構築や、Gemini Data Analytics チャット API のWebインターフェースへの統合を希望している場合。非適用条件: 1. バックエンド専用サービスの構築。2. シンプルなCLIスクリプトやコマンドラインアプリケーション。3. Webアプリケーションがデータ中心ではない、またはGCPソースからのデータの視覚化/クエリを伴わない場合。"
+    },
+    {
       "prefix": "Interact with your BigQuery data using natural language.",
       "translation": "自然言語を使用してBigQueryデータと対話します。このMCPサーバーを使用すると、データセットに安全に接続して検索、テーブルメタデータの検査、SQLクエリの実行などが可能になります。"
     },
