@@ -373,9 +373,42 @@
     "You have used some of your weekly limit, it will fully refresh in": "週間制限の一部を使用しました。完全に回復するまであと",
     "Global": "グローバル",
     "Plugin:": "プラグイン:",
-    "Creates a new multi-agent development project by copying the policy files and directory structure from the template, and automatically defining the 6 required subagents (architect, frontend, backend, qa,...": "テンプレートからポリシーファイルとディレクトリ構造をコピーして新しいマルチエージェント開発プロジェクトを作成し、必要な6つのサブエージェント（architect、frontend、backend、qa、...）を自動定義します。"
+    "Creates a new multi-agent development project by copying the policy files and directory structure from the template, and automatically defining the 6 required subagents (architect, frontend, backend, qa,...": "テンプレートからポリシーファイルとディレクトリ構造をコピーして新しいマルチエージェント開発プロジェクトを作成し、必要な6つのサブエージェント（architect、frontend、backend、qa、...）を自動定義します。",
+    "Configure agent execution, queued message delivery, and permissions.": "エージェントの実行、キューメッセージ配信、および権限を設定します。",
+    "Execution": "実行",
+    "Queued Messages": "キューメッセージ設定",
+    "Configure when follow-up messages are sent.": "フォローアップメッセージが送信されるタイミングを設定します。",
+    "Queue After Turn": "ターン終了後にキュー",
+    "Send Immediately": "即座に送信",
+    "Danger Zone": "危険ゾーン",
+    "Delete Project": "プロジェクトを削除",
+    "Permanently delete": "永久に削除: ",
+    "active conversations": "有効な会話",
+    "archived conversations.": "アーカイブ済み会話。",
+    "Verbose Agent Chat": "詳細なエージェントチャット",
+    "Display and preserve intermediate thinking steps.": "途中の思考ステップを表示および保存します。",
+    "Conversation Width": "会話の表示幅",
+    "Configure the maximum width of the conversation panel.": "会話パネルの最大幅を設定します。",
+    "Within each group, models share a weekly limit and a 5-hour limit. Quota is consumed proportionally to the cost of the tokens. Thus, limits will last longer with shorter tasks or using more cost-effective models. The 5-hour limit smooths out aggregate demand to fairly distribute global capacity across all users, while your weekly limit is tied directly to your individual tier.": "各グループ内で、モデルは週間制限と5時間制限を共有します。使用枠はトークンのコストに比例して消費されます。そのため、短いタスクやよりコスト効率の高いモデルを使用することで、制限を長く維持できます。5時間制限は全体の需要を平均化してすべてのユーザーに容量を公平に分配し、週間制限は個人のティアに直接紐づいています。",
+    "Five Hour Limit": "5時間制限",
+    "Advanced Settings": "詳細設定",
+    "Automatic Check for Updates": "アップデートの自動チェック",
+    "When enabled, you will be automatically prompted to restart the app when there is a new update available. When disabled, you can check for updates manually from the app menu.": "有効にすると、新しいアップデートが利用可能な場合にアプリの再起動を自動的に促します。無効にすると、アプリメニューから手動でアップデートを確認できます。",
+    "Commands Outside Sandbox": "サンドボックス外のコマンド"
   },
   "MCP_DESCRIPTIONS": [
+    {
+      "prefix": "Skills providing tailored instructions for happy path Dart and Flutter",
+      "translation": "Dart および Flutter の開発ワークフロー向けに最適化された手順を提供するスキル。"
+    },
+    {
+      "prefix": "Build and prototype location-aware applications with Google Maps Platform.",
+      "translation": "Google Maps Platform を使用して位置情報を活用したアプリを構築・試作します。対話型マップの統合、スポット詳細の検索・検査、最適なルート計算などを行います。"
+    },
+    {
+      "prefix": "Ancient text restoration, attribution, dating, contextualization",
+      "translation": "Aeneas（ラテン語）/ Ithaca（古代ギリシャ語）を使用した古代テキストの復元、属性特定、年代測定、文脈化、および埋め込みを行います。「復元」、「属性特定」、「年代測定」、「文脈化」、「類似の発見」を要求された場合に使用します。"
+    },
     {
       "prefix": "Interact with your Harness account using natural language. This MCP server lets AI agents",
       "translation": "自然言語を使用してHarnessアカウントと対話します。このMCPサーバーは、AIエージェントによるCI/CDパイプライン、実行、サービス、環境、コネクタの検査や管理を可能にします。"
