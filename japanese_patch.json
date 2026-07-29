@@ -394,9 +394,54 @@
     "Advanced Settings": "詳細設定",
     "Automatic Check for Updates": "アップデートの自動チェック",
     "When enabled, you will be automatically prompted to restart the app when there is a new update available. When disabled, you can check for updates manually from the app menu.": "有効にすると、新しいアップデートが利用可能な場合にアプリの再起動を自動的に促します。無効にすると、アプリメニューから手動でアップデートを確認できます。",
-    "Commands Outside Sandbox": "サンドボックス外のコマンド"
+    "Commands Outside Sandbox": "サンドボックス外のコマンド",
+    "Welcome to Antigravity": "Antigravity へようこそ",
+    "Setting up…": "セットアップ中…",
+    "Welcome to the new Antigravity!": "新しい Antigravity へようこそ！",
+    "Antigravity has been redesigned to put agents first with new capabilities. If you'd still like a code editor, you can download it as a separate app named Antigravity IDE.": "Antigravity は新機能を搭載し、エージェントファーストに再設計されました。コードエディタが必要な場合は、別アプリ「Antigravity IDE」としてダウンロードできます。",
+    "Download the Antigravity IDE": "Antigravity IDE をダウンロード",
+    "Explore the new Antigravity": "新しい Antigravity をはじめる",
+    "Checking for Updates...": "アップデートを確認中...",
+    "Downloading Update...": "アップデートをダウンロード中...",
+    "Restart to Update": "再起動してアップデート"
   },
   "MCP_DESCRIPTIONS": [
+    {
+      "prefix": "Ask questions. Get answers. The MCP is a server your coding agent talks to.",
+      "translation": "質問を投げて回答を取得します。このMCPサーバーを通じて、コーディングエージェントがPostHogデータに対してクエリを実行し、分析結果を取得します。"
+    },
+    {
+      "prefix": "The GKE remote MCP server provides read write access to your GKE Kubernetes resources.",
+      "translation": "GKE リモート MCP サーバーは、GKE Kubernetes リソースへの読み書きアクセスを提供し、AIエージェントによる環境の検査や監視を可能にします。"
+    },
+    {
+      "prefix": "The Apigee API hub remote MCP server lets you manage the APIs, versions, specs,",
+      "translation": "Apigee API hub リモート MCP サーバーを使用すると、API、バージョン、仕様、オペレーション、デプロイメント、依存関係などを管理できます。"
+    },
+    {
+      "prefix": "Instructions for handling API keys and credentials safely, verifying their presence,",
+      "translation": "APIキーや資格情報を安全に取り扱い、存在確認や不足時の安全な追加プロトコルを提供する手順です。"
+    },
+    {
+      "prefix": "Multi-agent environment setup plugin.",
+      "translation": "マルチエージェント環境セットアッププラグイン。"
+    },
+    {
+      "prefix": "Using the Google Antigravity Python SDK to build AI agents",
+      "translation": "Google Antigravity Python SDK を使用して AI エージェントを構築するためのプラグイン。"
+    },
+    {
+      "prefix": "Curated collection of agent skills for modern web development.",
+      "translation": "モダンな Web 開発向けに厳選されたエージェントスキルのコレクション。"
+    },
+    {
+      "prefix": "note.com multi-agent article creator setup plugin.",
+      "translation": "note.com 向けマルチエージェント記事作成セットアッププラグイン。"
+    },
+    {
+      "prefix": "Curated collection of agent skills for science tasks.",
+      "translation": "科学的タスク向けに厳選されたエージェントスキルのコレクション。"
+    },
     {
       "prefix": "Skills providing tailored instructions for happy path Dart and Flutter",
       "translation": "Dart および Flutter の開発ワークフロー向けに最適化された手順を提供するスキル。"
