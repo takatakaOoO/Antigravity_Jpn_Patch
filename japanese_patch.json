@@ -410,9 +410,26 @@
     "Are you sure you want to quit?": "本当に終了しますか？",
     "There may be agents or background tasks running.": "実行中のエージェントまたはバックグラウンドタスクが存在する可能性があります。",
     "Open workspace": "ワークスペースを開く",
-    "Open workspaces": "ワークスペースを開く"
+    "Open workspaces": "ワークスペースを開く",
+    "Keep the app accessible from the menu bar and running in the background when all windows are closed.": "すべてのウィンドウを閉じた場合でも、メニューバーからアプリにアクセスできるようにし、バックグラウンドで実行し続けます。"
   },
   "MCP_DESCRIPTIONS": [
+    {
+      "prefix": "The Google Home Developer MCP server allows you to search through Google Home documentation,",
+      "translation": "Google Home Developer MCP サーバーを使用すると、Google Home ドキュメント、OpenThread および Matter の仕様ドキュメントを検索できます。"
+    },
+    {
+      "prefix": "Ask questions. Get answers. The MCP",
+      "translation": "質問を投げて回答を取得します。このMCPサーバーを通じて、コーディングエージェントがPostHogデータに対してクエリを実行し、分析結果を取得します。"
+    },
+    {
+      "prefix": "Comprehensive guide and reference for the Antigravity Customization System.",
+      "translation": "Antigravity カスタマイズシステムの包括的なガイドとリファレンス。スキルの作成や動作、優先順位などの解説に使用します。"
+    },
+    {
+      "prefix": "Provides instructions for installing and using the `android` CLI.",
+      "translation": "android CLI のインストールと使用方法を提供します。Android アプリのビルド、実行、デバイス管理などに使用します。"
+    },
     {
       "prefix": "Search and reference over 600,000 real-world app screens, user flows, and UI patterns from Mobbin",
       "translation": "AIツール内から直接Mobbinの60万以上のリアルなアプリ画面、ユーザーフロー、UIパターンを検索・参照します。"
