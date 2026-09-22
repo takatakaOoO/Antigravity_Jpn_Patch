@@ -411,9 +411,171 @@
     "There may be agents or background tasks running.": "実行中のエージェントまたはバックグラウンドタスクが存在する可能性があります。",
     "Open workspace": "ワークスペースを開く",
     "Open workspaces": "ワークスペースを開く",
-    "Keep the app accessible from the menu bar and running in the background when all windows are closed.": "すべてのウィンドウを閉じた場合でも、メニューバーからアプリにアクセスできるようにし、バックグラウンドで実行し続けます。"
+    "Keep the app accessible from the menu bar and running in the background when all windows are closed.": "すべてのウィンドウを閉じた場合でも、メニューバーからアプリにアクセスできるようにし、バックグラウンドで実行し続けます。",
+    "Try Remote Control": "リモートコントロールをお試しください",
+    "Kick off work on your computer and continue working with your agents from your phone or another device. Turn on Remote Control in app settings.": "PCで作業を開始し、スマートフォンや他のデバイスからエージェントとの作業を継続できます。アプリ設定で「リモートコントロール」を有効にしてください。",
+    "Dismiss": "閉じる",
+    "Queue until after the current turn.": "現在のターンの後にキューイング",
+    "Remote Control": "リモートコントロール",
+    "Enable Remote Control": "リモートコントロールを有効化",
+    "Work with local agents from another device.": "他のデバイスからローカルエージェントとやり取りします。",
+    "Device Name": "デバイス名",
+    "Enter device name...": "デバイス名を入力...",
+    "Scan the code to open this device in Remote Control, or copy link.": "コードをスキャンしてこのデバイスをリモートコントロールで開くか、リンクをコピーしてください。",
+    "copy link": "リンクをコピー",
+    "Global Permissions": "グローバル権限",
+    "Tool Permissions": "ツール権限",
+    "Modify permissions for file, terminal, and MCP tools.": "ファイル、ターミナル、およびMCPツールの権限を変更します。",
+    "Controls the actions the agent can take.": "エージェントが実行できるアクションを制御します。",
+    "Full machine": "フルマシン",
+    "Learn more about Full machine": "フルマシンの詳細",
+    "Learn more about Full Machine": "フルマシンの詳細"
   },
   "MCP_DESCRIPTIONS": [
+    {
+      "prefix": "Leverages BigQuery's built-in machine learning and GenAI capabilities",
+      "translation": "BigQuery組み込みの機械学習および生成AI機能を活用し、高度なデータ分析や予測を行うSQLクエリを生成します。"
+    },
+    {
+      "prefix": "Generates Python code using BigQuery DataFrames (BigFrames),",
+      "translation": "BigQuery DataFrames (BigFrames) を使用した pandas/scikit-learn スタイルの Python コードを生成します。"
+    },
+    {
+      "prefix": "Provides guidelines and best practices for querying and defining property graphs and semantic graphs in BigQuery",
+      "translation": "GQL(Graph Query Language)を使用してBigQuery内でプロパティグラフやセマンティックグラフを定義・クエリするためのガイドラインとベストプラクティスを提供します。"
+    },
+    {
+      "prefix": "Provides BigQuery SQL query optimization techniques, execution best practices,",
+      "translation": "BigQuery SQLクエリの最適化テクニック、実行のベストプラクティス、パフォーマンスチューニングルールを提供します。"
+    },
+    {
+      "prefix": "Write and organize unit tests for functions, methods, and classes using `package:test`.",
+      "translation": "package:test を使用して関数、メソッド、クラスの単体テストを作成および整理します。"
+    },
+    {
+      "prefix": "Entrypoint structure, exit codes, cross-platform scripts. Use when building command line utilities,",
+      "translation": "エントリポイント構造、終了コード、クロスプラットフォームスクリプトのベストプラクティスを提供し、コマンドラインツールやスクリプトを構築します。"
+    },
+    {
+      "prefix": "Collect coverage using the coverage",
+      "translation": "coverage パッケージを使用してテストカバー率を収集し、LCOV レポートを作成します。"
+    },
+    {
+      "prefix": "Uses get_runtime_errors and lsp to fetch an active stack trace,",
+      "translation": "スタックトレースの取得、エラー箇所の特定、修正の適用、hot_reload による動作検証を行って実行時エラーを修復します。"
+    },
+    {
+      "prefix": "Define and generate mock objects for external dependencies using `package:mockito`",
+      "translation": "package:mockito および build_runner を使用して外部依存関係のモックオブジェクトを定義・生成します。"
+    },
+    {
+      "prefix": "Replace the usage of `expect` and similar functions from `package:matcher`",
+      "translation": "package:matcher の expect や関連関数を package:checks の同等表現に移行します。"
+    },
+    {
+      "prefix": "Workflow for fixing package version conflicts. Use this when `pub get` fails",
+      "translation": "pub get が不整合なバージョンにより失敗した場合に、パッケージバージョンの競合を修正するワークフローです。"
+    },
+    {
+      "prefix": "Execute `dart analyze` to identify warnings and errors,",
+      "translation": "dart analyze を実行して警告やエラーを特定し、dart fix --apply を使用して自動修正可能な静的解析問題を解決します。"
+    },
+    {
+      "prefix": "Guides agents in compiling and packaging C/C++ source code into dynamic or static libraries",
+      "translation": "Dart の Native Assets フックシステムを使用して、C/C++ ソースコードを動的または静的ライブラリにコンパイル・パッケージ化する手順を提供します。"
+    },
+    {
+      "prefix": "Guide agents to use `package:ffigen` to automatically generate FFI bindings",
+      "translation": "package:ffigen を使用して FFI バインディングを自動生成するガイドを提供します。"
+    },
+    {
+      "prefix": "Use switch expressions and pattern matching where appropriate",
+      "translation": "適切な場所で switch 式やパターンマッチングを使用します。"
+    },
+    {
+      "prefix": "Help users write syntactically and semantically correct primary constructors in Dart,",
+      "translation": "Dart において構文的・意味的に正しいプライマリコンストラクタの作成および新しいコンストラクタ構文への移行を支援します。"
+    },
+    {
+      "prefix": "Enforces resource attribution for CLI commands.",
+      "translation": "CLI コマンドのリソース帰属（attribution）を強制適用します。bq や gcloud コマンドを実行する際に使用します。"
+    },
+    {
+      "prefix": "Provides guidance for migrating Apache Airflow DAGs in Managed Service for Apache Airflow",
+      "translation": "Managed Service for Apache Airflow (MSAA) における DAG 移行のガイドを提供します。Airflow 2.11.1 や Airflow 3 への移行、非推奨設定の検知に対応します。"
+    },
+    {
+      "prefix": "Assesses security posture, evaluates risks, and checks SAIF compliance for Google Cloud Storage",
+      "translation": "Google Cloud Storage バケットまたはプロジェクトのセキュリティ姿勢の評価、リスク検証、SAIF コンプライアンスのチェックを行います。"
+    },
+    {
+      "prefix": "Use this skill when building applications with Gemini API hosted models,",
+      "translation": "Gemini および Gemma 4 モデルを活用したアプリケーション構築、マルチモーダルコンテンツ、ファンクションコーリング、構造化出力の実装に使用します。"
+    },
+    {
+      "prefix": "Use this skill when writing code that calls the Gemini API for text generation,",
+      "translation": "テキスト生成、マルチターンチャット、画像/動画生成、ストリーミングレスポンスなどのために Gemini API (Interactions API) を呼び出すコードの記述に使用します。"
+    },
+    {
+      "prefix": "Use this skill when building real-time, bidirectional streaming applications with the Gemini Live API.",
+      "translation": "Gemini Live API を使用したリアルタイムかつ双方向のストリーミングアプリケーション構築に使用します。音声を交えた対話やVAD（音声検出）機能に対応します。"
+    },
+    {
+      "prefix": "Use this skill for generative video editing, text-to-video,",
+      "translation": "google-genai SDK を使用した動画生成・編集、テキストからの動画生成、画像参照動画生成、最初のフレームからの動画トランジションアニメーションなどに使用します。"
+    },
+    {
+      "prefix": "Configures Flutter Driver for app interaction and converts MCP actions into permanent integration tests.",
+      "translation": "Flutter Driver を設定してアプリ操作を自動化し、MCP アクションを恒久的な統合テストに変換します。"
+    },
+    {
+      "prefix": "Adds interactive widget previews to the project using the previews.dart system.",
+      "translation": "previews.dart システムを使用して、プロジェクトにインタラクティブなウィジェットプレビューを追加します。"
+    },
+    {
+      "prefix": "Implement a component-level test using `WidgetTester` to verify UI rendering",
+      "translation": "WidgetTester を使用してコンポーネントレベルのテストを実装し、UI レンダリングとユーザー操作を検証します。"
+    },
+    {
+      "prefix": "Architects a Flutter application using the recommended layered approach (UI, Logic, Data).",
+      "translation": "推奨されるレイヤードアプローチ（UI、ロジック、データ）を使用して Flutter アプリケーションのアーキテクチャを設計します。"
+    },
+    {
+      "prefix": "Use `LayoutBuilder`, `MediaQuery`, or `Expanded/Flexible` to create a layout",
+      "translation": "LayoutBuilder、MediaQuery、Expanded/Flexible を使用してレスポンシブレイアウトを作成します。"
+    },
+    {
+      "prefix": "Fixes Flutter layout errors (overflows, unbounded constraints)",
+      "translation": "RenderFlex 溢れや無制限の高さ制約などの Flutter レイアウトエラーを修正します。"
+    },
+    {
+      "prefix": "Create model classes with `fromJson` and `toJson` methods using `dart:convert`.",
+      "translation": "dart:convert を使用して fromJson および toJson メソッドを持つモデルクラスを作成します。"
+    },
+    {
+      "prefix": "Configure `MaterialApp.router` using a package like `go_router`",
+      "translation": "go_router などのパッケージを使用して MaterialApp.router を設定し、高度な URL ベース宣言型ルーティングを導入します。"
+    },
+    {
+      "prefix": "Add `flutter_localizations` and `intl` dependencies, enable \"generate true\" in `pubspec.yaml`,",
+      "translation": "flutter_localizations および intl 依存関係を追加し、l10n.yaml を設定して Flutter プロジェクトの多言語対応を初期化します。"
+    },
+    {
+      "prefix": "Use the `http` package to execute GET, POST, PUT, or DELETE requests.",
+      "translation": "http パッケージを使用して GET、POST、PUT、DELETE リクエストを実行し、REST API と通信します。"
+    },
+    {
+      "prefix": "Specialized suite of skills for data engineers and database practitioners on Google Cloud",
+      "translation": "Google Cloud 上のデータエンジニアおよびデータベース実務者向けの特化スキルスイート"
+    },
+    {
+      "prefix": "Build applications with the Gemini Interactions API and Live API,",
+      "translation": "テキスト生成、マルチターンチャット、ストリーミング、ファンクションコーリング、リアルタイム音声/動画など、Gemini Interactions API や Live API を活用したアプリケーションを構築します。"
+    },
+    {
+      "prefix": "Cloud CLI MCP Server provides tools to run gcloud and bq",
+      "translation": "Cloud CLI MCP サーバーは、リモートサンドボックス環境で gcloud および bq CLI コマンドを実行するためのツールを提供します。"
+    },
     {
       "prefix": "The Google Home Developer MCP server allows you to search through Google Home documentation,",
       "translation": "Google Home Developer MCP サーバーを使用すると、Google Home ドキュメント、OpenThread および Matter の仕様ドキュメントを検索できます。"
@@ -873,6 +1035,34 @@
     {
       "prefix": "The Spanner remote MCP server lets you access and run Spanner tools",
       "translation": "Spanner リモートMCPサーバーを使用すると、AI対応の開発環境からSpannerツールにアクセスして実行し、Spannerリソースの作成、管理、クエリを行えます。"
+    },
+    {
+      "prefix": "How to render rich interactive HTML widgets inline",
+      "translation": "チャット内またはスタンドアロンのアクティファクトとして、リッチでインタラクティブなHTMLウィジェットをレンダリングします。図表、データ可視化、対話型コントロール、チュートリアルなどのリッチな視覚的コンテンツをユーザーに提示する場合に使用します。"
+    },
+    {
+      "prefix": "A collection of skills for architecting and implementing production-ready code using Google Maps Platform",
+      "translation": "Google Maps Platform APIとSDKを使用して、地図、場所、住所、ジオコーディング、ルート探索/ETA、周辺検索、3D/ストリートビューなどの本番環境対応コードを設計・実装するためのスキルコレクションです。"
+    },
+    {
+      "prefix": "Automatically migrate legacy workflows",
+      "translation": "レガシーなワークフロー（.agents/workflows/ または ~/.gemini/config/workflows/）をスキル（.agents/skills/ または ~/.gemini/config/skills/）へ自動的に移行します。既存のワークフローをスキャンし、対象のSKILL.mdファイルを作成します。"
+    },
+    {
+      "prefix": "Guidelines for interacting with GitHub and request",
+      "translation": "エージェント環境の制限によりコマンドが失敗した場合に、GitHubとやり取りしてユーザーに権限を要求するためのガイドラインです。"
+    },
+    {
+      "prefix": "Expert at reviewing Flutter code for accessibility",
+      "translation": "アクセシビリティ（a11y）の観点からFlutterコードをレビューする専門エージェントです。コードベース、保留中の変更、またはPRのa11yレビューを実行する際に呼び出します。"
+    },
+    {
+      "prefix": "Controls the actions the agent can take.",
+      "translation": "エージェントが実行できるアクションを制御します。"
+    },
+    {
+      "prefix": "Modify permissions for file, terminal, and MCP tools.",
+      "translation": "ファイル、ターミナル、およびMCPツールの権限を変更します。"
     }
   ]
 }
